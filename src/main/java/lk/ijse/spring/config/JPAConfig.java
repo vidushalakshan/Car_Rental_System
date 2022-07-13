@@ -18,12 +18,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
-/**
- * @author Helitha Sri
- * @created 6/22/2022 - 1:28 PM
- * @project Spring POS
- */
-
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(basePackages = "lk.ijse.spring.repo")

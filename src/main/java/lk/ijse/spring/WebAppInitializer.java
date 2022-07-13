@@ -4,12 +4,6 @@ import lk.ijse.spring.config.WebAppConfig;
 import lk.ijse.spring.config.WebRootConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-/**
- * @author Helitha Sri
- * @created 6/22/2022 - 1:24 PM
- * @project Spring POS
- */
-
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override

@@ -7,11 +7,6 @@
 //import org.springframework.web.bind.annotation.ResponseStatus;
 //import org.springframework.web.bind.annotation.RestController;
 //
-///**
-// * @author Helitha Sri
-// * @created 7/3/2022 - 1:28 AM
-// * @project Spring POS
-// */
 //
 //@RestController
 //@CrossOrigin
