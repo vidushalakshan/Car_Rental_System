@@ -5,12 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-/**
- * @author Helitha Sri
- * @created 6/23/2022 - 11:47 AM
- * @project Spring POS
- */
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
