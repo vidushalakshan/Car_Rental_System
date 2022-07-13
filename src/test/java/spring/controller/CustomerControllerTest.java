@@ -19,7 +19,7 @@ import org.springframework.transaction.annotation.Transactional;
 class CustomerControllerTest {
     @Test
     public void testDTO(){
-        CustomerDTO customerDTO = new CustomerDTO();
+        CustomerDTO CustomerDTO = new CustomerDTO();
     }
 
 
@@ -33,13 +33,13 @@ class CustomerControllerTest {
 
     @Test
     void addCustomer(){
-        CustomerDTO customerDTO = new CustomerDTO("C002", "Helitha", "Kandy", 5000.20);
-        customerService.saveCustomer(customerDTO);
+        CustomerDTO CustomerDTO = new CustomerDTO("C002", "Helitha", "Kandy", 5000.20);
+        customerService.saveCustomer(CustomerDTO);
     }
 
     @Test
     void updateCustomer(){
-        CustomerDTO customerDTO = new CustomerDTO("C003", "Helitha Sri", "Kandy, Nawalapitiya", 900);
-        customerService.updateCustomer(customerDTO);
+        CustomerDTO CustomerDTO = new CustomerDTO("C003", "Helitha Sri", "Kandy, Nawalapitiya", 900);
+        customerService.updateCustomer(CustomerDTO);
     }
 }*/

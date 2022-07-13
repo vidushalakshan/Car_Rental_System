@@ -9,7 +9,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @Data
 @ToString
-public class vehicalTypeDTO {
+public class VehicalTypeDTO {
     private String vehical_Type;
     private double loss_Damage_Waiver;
     private String type;

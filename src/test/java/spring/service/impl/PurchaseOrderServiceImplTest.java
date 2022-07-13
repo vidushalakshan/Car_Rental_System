@@ -40,9 +40,9 @@
 //        dtos.add(new OrderDetailsDTO("O00-002","I00-002",5,600.00,30000.00));
 //        dtos.add(new OrderDetailsDTO("O00-002","I00-003",5,100.00,100.00));
 //
-//        CustomerDTO customerDTO = new CustomerDTO("C00-001", "Heli", "Kandy", 500.00);
+//        CustomerDTO CustomerDTO = new CustomerDTO("C00-001", "Heli", "Kandy", 500.00);
 //
-//        OrdersDTO ordersDTO = new OrdersDTO("O00-002", LocalDate.now(), 5, 5000.00, 1000.00, customerDTO, dtos);
+//        OrdersDTO ordersDTO = new OrdersDTO("O00-002", LocalDate.now(), 5, 5000.00, 1000.00, CustomerDTO, dtos);
 //        service.purchaseOrder(ordersDTO);
 //    }
 //

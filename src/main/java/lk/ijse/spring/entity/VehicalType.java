@@ -4,7 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class vehicalType {
+public class VehicalType {
     @Id
     private String vehical_Type;
     private double loss_Damage_Waiver;
