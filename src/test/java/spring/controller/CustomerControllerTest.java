@@ -1,3 +1,4 @@
+/*
 package spring.controller;
 
 import lk.ijse.spring.config.JPAConfig;
@@ -15,9 +16,6 @@ import org.springframework.transaction.annotation.Transactional;
 //@ContextConfiguration(classes = {WebAppConfig.class})
 //@ExtendWith(SpringExtension.class)
 //@Transactional // dont commit anything to database // just test is it working properly or not
-@WebAppConfiguration // State test configuration class
-@ContextConfiguration(classes = {JPAConfig.class}) // import configurations for Test Context
-@ExtendWith(SpringExtension.class)
 class CustomerControllerTest {
     @Test
     public void testDTO(){
@@ -25,7 +23,7 @@ class CustomerControllerTest {
     }
 
 
-   /* @Autowired
+    @Autowired
     CustomerService customerService;
 
     @Test
@@ -43,5 +41,5 @@ class CustomerControllerTest {
     void updateCustomer(){
         CustomerDTO customerDTO = new CustomerDTO("C003", "Helitha Sri", "Kandy, Nawalapitiya", 900);
         customerService.updateCustomer(customerDTO);
-    }*/
-}
+    }
+}*/
