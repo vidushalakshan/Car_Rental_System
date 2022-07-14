@@ -37,9 +37,4 @@ class CustomerControllerTest {
         customerService.saveCustomer(CustomerDTO);
     }
 
-    @Test
-    void updateCustomer(){
-        CustomerDTO CustomerDTO = new CustomerDTO();
-        customerService.updateCustomer(CustomerDTO);
-    }
 }
