@@ -7,11 +7,11 @@ import java.util.List;
 
 public interface StafService {
 
-    void saveDriver(CustomerDTO customerDTO);
+    void saveDriver(StafDTO stafDTO);
 
-    void deleteDriver(String customerID);
+    void deleteDriver(String driverID);
 
-    void updateDriver(CustomerDTO customerDTO);
+    void updateDriver(StafDTO stafDTO);
 
     StafDTO searchDriver(String id);
 
