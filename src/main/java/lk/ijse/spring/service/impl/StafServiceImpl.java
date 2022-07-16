@@ -31,7 +31,11 @@ public class StafServiceImpl implements StafService {
 
     @Override
     public void deleteDriver(String driverID) {
-
+        if (stafRepo.existsById(driverID)){
+            stafRepo.deleteById(driverID);
+        }else {
+            throw new RuntimeException("Please check the Customer ID.. No Such Customer..!");
+        }
     }
 
     @Override
