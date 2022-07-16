@@ -1,6 +1,7 @@
 package lk.ijse.spring.service;
 
 import lk.ijse.spring.dto.CustomerDTO;
+import lk.ijse.spring.dto.StafDTO;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ public interface StafService {
 
     void updateDriver(CustomerDTO customerDTO);
 
-    CustomerDTO searchDriver(String id);
+    StafDTO searchDriver(String id);
 
-    List<CustomerDTO> getAllDrivers();
+    List<StafDTO> getAllDrivers();
 }
