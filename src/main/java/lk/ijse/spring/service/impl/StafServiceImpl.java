@@ -2,11 +2,11 @@ package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.dto.StafDTO;
-import lk.ijse.spring.entity.Customer;
 import lk.ijse.spring.entity.Staf;
 import lk.ijse.spring.repo.StafRepo;
 import lk.ijse.spring.service.StafService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
@@ -49,11 +49,17 @@ public class StafServiceImpl implements StafService {
 
     @Override
     public StafDTO searchDriver(String id) {
-        return null;
+        if (stafRepo.existsById(id)){
+            return mapper.map(stafRepo.findById(id).get(), StafDTO.class);
+        }else {
+            throw new RuntimeException("No Driver For " + id + " ..!");
+        }
     }
 
     @Override
     public List<StafDTO> getAllDrivers() {
-        return null;
+        return mapper.map(stafRepo.findAll(), new TypeToken<List<StafDTO>>(){
+
+        }.getType());
     }
 }
