@@ -34,13 +34,17 @@ public class StafServiceImpl implements StafService {
         if (stafRepo.existsById(driverID)){
             stafRepo.deleteById(driverID);
         }else {
-            throw new RuntimeException("Please check the Customer ID.. No Such Customer..!");
+            throw new RuntimeException("Please check the Driver ID.. No Such Driver..!");
         }
     }
 
     @Override
     public void updateDriver(StafDTO stafDTO) {
-
+        if (stafRepo.existsById(stafDTO.getStaf_ID())){
+            stafRepo.save(mapper.map(stafDTO,Staf.class));
+        }else {
+            throw new RuntimeException("Please check the Driver ID... No Such Driver to Update..!");
+        }
     }
 
     @Override
