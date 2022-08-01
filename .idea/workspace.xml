@@ -9,6 +9,14 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -24,7 +32,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Car_RentalSystem_BackEnd" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Car_Rental_System-72520a0daa6495436def2402051dfc8fc3b72231" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -44,7 +52,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1659337999189</updated>
-      <workItem from="1659338000371" duration="1434000" />
+      <workItem from="1659338000371" duration="1773000" />
     </task>
     <servers />
   </component>
@@ -52,10 +60,10 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1659338372047">
+    <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1659339770872">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816/-1366.111.1366.720@0.0.1536.816" timestamp="1659338372047" />
+    <state x="549" y="163" key="FileChooserDialogImpl/0.0.1536.816/-1366.111.1366.720@0.0.1536.816" timestamp="1659339770872" />
     <state x="209" y="29" key="new project wizard" timestamp="1659338519630">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
