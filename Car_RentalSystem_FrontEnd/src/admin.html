@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Crete+Round&display=swap" rel="stylesheet">
+    <script crossorigin="anonymous"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <script crossorigin="anonymous" src="https://kit.fontawesome.com/987b695cdd.js"></script>
+
+    <style>
+
+
+        #sidebar {
+            position: fixed;
+            height: 100vh !important;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+            width: 260px;
+            overflow: auto;
+            transition: all 0.3s;
+            background: rgba(4, 4, 9, 0.7);
+            box-shadow: 0 10px 30px -12px rgb(0 0 0 / 42%), 0 4px 25px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
+        }
+
+        #titleImg {
+            border-radius: 36px;
+            height: 37px;
+            width: 67px;
+        }
+
+        #titletxt {
+            color: #d63384;
+            font-weight: bold;
+        }
+
+        #sidebar .sidebar-header {
+            padding: 20px;
+            background-color: #ffffff;
+            border-bottom: 1px solid #eee;
+        }
+
+        .sidebar-header h3 {
+            color: #333;
+            font-size: 17px;
+            margin: 0px;
+            text-transform: uppercase;
+            transition: all 0.5s ease;
+            font-weight: 600;
+        }
+
+        .sidebar-header h3 img {
+            width: 45px;
+            margin-right: 10px;
+        }
+
+        #sidebar ul li {
+            padding: 2px 7px;
+        }
+
+        #sidebar ul li.active > a {
+            color: #333;
+            background-color: rgba(200, 200, 200, 0.2);
+        }
+
+        #sidebar ul li a:hover {
+            color: #053a93;
+            background-color: rgba(200, 200, 200, 0.2);
+        }
+
+        #sidebar ul li a {
+            padding: 10px;
+            line-height: 64px;
+            border-radius: 5px;
+            font-size: 15px;
+            position: relative;
+            width: -15%;
+            display: block;
+        }
+
+        #sidebar ul li a i {
+            position: relative;
+            margin-right: 10px;
+            top: 5px;
+            color: #555555;
+            margin-left: 10px;
+        }
+
+        #customers > li > a {
+            text-decoration-line: none;
+            color: white;
+            text-space: 10px;
+        }
+
+        #customers > li > a > span {
+            position: relative;
+            left: 30px;
+        }
+
+        /*end nav bar section*/
+
+        .navbar {
+            background-color: #2196F3;
+            color: #FFFFFF;
+        }
+
+
+        #topnaw {
+            position: relative;
+            height: 62px;
+        }
+
+        #txtnav {
+            position: relative;
+            text-align: center;
+            left: 734px;
+            font-family: 'Crete Round', serif;
+            font-weight: bold;
+
+        }
+
+        #navimage {
+            width: 86px;
+            height: 66px;
+        }
+
+        #navimage:hover {
+            width: 88px;
+            height: 68px;
+            cursor: pointer;
+        }
+
+        .dashboard1 {
+            width: 74%;
+            position: relative;
+            left: 338px;
+            top: 115px;
+        }
+
+        #admin > form > div {
+            width: 82%;
+            position: relative;
+            left: 23%;
+        }
+
+        #formFile {
+            width: 94%;
+        }
+
+        #admintbl {
+            position: relative;
+            width: 93%;
+            left: 14%;
+        }
+
+        #adminbtn {
+            position: relative;
+            right: 6%;
+        }
+
+        #driver > form > div {
+            width: 82%;
+            position: relative;
+            left: 23%;
+        }
+
+        #formDriverFile {
+            width: 94%;
+        }
+
+        #drivertbl {
+            position: relative;
+            width: 93%;
+            left: 14%;
+        }
+
+        #driverbtn {
+            position: relative;
+            right: 6%;
+        }
+
+        #customertbl {
+            position: relative;
+            width: 93%;
+            left: 14%;
+            top: 50px;
+        }
+
+        #car > form > div {
+            width: 82%;
+            position: relative;
+            left: 23%;
+        }
+
+        #cartbl {
+            position: relative;
+            width: 80%;
+            left: 11%;
+        }
+
+        #carbtn {
+            position: relative;
+            right: 6%;
+        }
+
+        #booking > form > div {
+            width: 82%;
+            position: relative;
+            left: 23%;
+            top: 50px;
+        }
+
+        #bookingbtn {
+            position: relative;
+            right: 6%;
+        }
+
+        #bookingtbl {
+            position: relative;
+            width: 90%;
+            left: 15%;
+        }
+
+        #payment > form > div {
+            width: 82%;
+            position: relative;
+            left: 23%;
+            top: 50px;
+        }
+
+        #paymentbtn {
+            position: relative;
+            right: 6%;
+        }
+
+        #paymenttbl {
+            position: relative;
+            width: 90%;
+            left: 15%;
+        }
+
+        #driverShedule > form > div {
+            width: 82%;
+            position: relative;
+            left: 23%;
+            top: 50px;
+        }
+
+        #sheduleTxt {
+            position: relative;
+            left: 138px;
+        }
+
+        #driverSheduletbl {
+            position: relative;
+            width: 90%;
+            left: 15%;
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3><img class="img-fluid" id="titleImg" src="assets/image/slider/3GOBoJ.webp"/><span id="titletxt">Car Rental</span>
+            </h3>
+        </div>
+        <ul class="list-unstyled components" id="customers">
+            <li class="" id="dashboardlink">
+                <a href="#"><img height="45" src="assets/image/slider/dashboard.png"
+                                 width="50"><span>Dashboard</span></a>
+            </li>
+            <li class="" id="adminlink">
+                <a href="#"><img height="45" src="assets/image/slider/admin%20(2).png" width="50"><span>Admin</span></a>
+            </li>
+            <li class="" id="driverlink">
+                <a href="#"><img height="45" src="assets/image/slider/admin%20(2).png"
+                                 width="50"><span>Drivers</span></a>
+            </li>
+            <li class="" id="linkCustomers">
+                <a href="#"><img height="45" src="assets/image/slider/admin%20(2).png" width="50"><span>Customers</span></a>
+            </li>
+            <li class="" id="linkCars">
+                <a href="#"><img height="45" src="assets/image/slider/car.png" width="50"><span>Cars</span></a>
+            </li>
+            <li class="" id="linkBooking">
+                <a href="#"><img height="45" src="assets/image/slider/booking.png" width="50"><span>Booking</span></a>
+            </li>
+            <li class="" id="linkPayment">
+                <a href="#"><img height="45" src="assets/image/slider/payment.png" width="50"><span>Payment</span></a>
+            </li>
+        </ul>
+    </nav>
+</div>
+<!--end slid bar-->
+
+<!--start top naw bar section-->
+
+<div id="content">
+    <div class="top-navbar">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid" id="topnaw">
+                <h1 id="txtnav">Administrator</h1>
+                <img alt="" id="navimage" src="assets/image/logout.png">
+            </div>
+        </nav>
+    </div>
+</div>
+
+<!--end top naw bar section-->
+
+<!--start Dashboard section-->
+<div class="row row-cols-1 row-cols-md-3 g-3 dashboard1" id="dashboard">
+    <div class="col" id="col1">
+        <div class="card">
+            <h1>ADMIN</h1>
+            <div class="card-body">
+                <h1>3</h1>
+                <button class="btn btn-primary btn-lg" type="button">View Details</button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <h1>DRIVERS</h1>
+            <div class="card-body">
+                <h1>3</h1>
+                <button class="btn btn-primary btn-lg" type="button">View Details</button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <h1>CUSTOMERS</h1>
+            <div class="card-body">
+                <h1>25</h1>
+                <button class="btn btn-primary btn-lg" type="button">View Details</button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <h1>CARS</h1>
+            <div class="card-body">
+                <h1>30</h1>
+                <button class="btn btn-primary btn-lg" type="button">View Details</button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <h1>BOOKING</h1>
+            <div class="card-body">
+                <h1>7</h1>
+                <button class="btn btn-primary btn-lg" type="button">View Details</button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <h1>PAYMENT</h1>
+            <div class="card-body">
+                <h1>4</h1>
+                <button class="btn btn-primary btn-lg" type="button">View Details</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end dash board section-->
+
+
+<!--start admin section -->
+<section class="container" id="admin">
+
+    <!--start form section-->
+
+    <form class="col-md-auto">
+        <div class="card col-12 mx-1">
+            <div class="card-body">
+                <div class="form-group col-5 d-inline-block mx-3">
+                    <label class="form-label" for="exampleInputID" id="AdminIDBtn">Admin_ID :</label>
+                    <input aria-describedby="orderId"
+                           class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                           id="exampleInputID" type="text">
+                </div>
+
+                <div class="form-group col-5 d-inline-block m-lg-2">
+                    <label class="form-label" for="exampleInputName" id="AdminNameBtn">Full Name :</label>
+                    <input aria-describedby="orderDate"
+                           class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                           id=exampleInputName type="text">
+                </div>
+
+                <div class="mx-3 mt-2 col-5 d-inline-block">
+                    <label class="form-label" for="exampleInputAddress" id="AdminAddressBtn">Address :</label>
+                    <select class="form-select btn-outline-primary bg-light bg-opacity-50 text-dark"
+                            id="exampleInputAddress" type="text">
+                    </select>
+                </div>
+
+                <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
+                    <label class="form-label" for="txtMObileNumber" id="AdminMobileNumBtn">Mobile Number :</label>
+                    <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                           id="txtMObileNumber"
+                           type="text">
+                </div>
+
+                <div class="form-group col-5 d-inline-block mx-3">
+                    <label class="form-label" for="txtPassword" id="AdminPasswordBtn">Password :</label>
+                    <input aria-describedby="orderId"
+                           class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                           id="txtPassword" type="text">
+                </div>
+
+                <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
+                    <label class="form-label" for="txtAdminEmail" id="AdminEmailBtn">Email :</label>
+                    <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id=txtAdminEmail
+                           type="text">
+                </div>
+
+                <!--<div class="form-group col-11 d-inline-block mx-lg-3 m-lg-1">
+                    <label class="form-label" for="formFile" id="AdminImageImg">Admin Image :</label>
+                    <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="formFile"
+                           type="file">
+                </div>-->
+            </div>
+        </div>
+    </form>
+    <br><br>
+
+    <!-- end form section-->
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="adminbtn">
+        <button class="btn btn-outline-primary" id="btnAdminSave" type="button">Save & Update</button>
+        <button class="btn btn-outline-info" id="btnAdminClear" type="button">Clear</button>
+    </div>
+    <br><br>
+
+    <!--start admin table section-->
+    <section class="container">
+        <table class="table table-primary table-hover table-bordered" id="admintbl">
+            <thead>
+            <tr>
+                <th scope="col">Admin_ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">MobileNumber</th>
+                <th scope="col">Password</th>
+                <th scope="col">Email</th>
+                <th scope="col">Image</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <!--<td>@mdo</td>-->
+                <td>
+                    <button class="btn btn-danger badge rounded-pill" style="width: 80px;" type="button">Delete</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <!--end admin table section-->
+
+</section>
+
+<!--end admin section-->
+
+<!--start driver section-->
+
+<section class="container" id="driver">
+
+    <!--start form section-->
+
+    <form class="col-md-auto">
+        <div class="card col-12 mx-1">
+            <div class="card-body">
+                <div class="form-group col-5 d-inline-block mx-3">
+                    <label class="form-label" for="exampleInputDriverID">Driver ID :</label>
+                    <input aria-describedby="orderId"
+                           class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                           id="exampleInputDriverID" type="text">
+                </div>
+
+                <div class="form-group col-5 d-inline-block m-lg-2">
+                    <label class="form-label" for="exampleInputDriverName">Full Name :</label>
+                    <input aria-describedby="orderDate"
+                           class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                           id=exampleInputDriverName type="text">
+                </div>
+
+                <div class="mx-3 mt-2 col-5 d-inline-block">
+                    <label class="form-label" for="exampleInputDriverAddress">Address :</label>
+                    <select class="form-select btn-outline-primary bg-light bg-opacity-50 text-dark"
+                            id="exampleInputDriverAddress" type="text">
+                    </select>
+                </div>
+
+                <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
+                    <label class="form-label" for="txtMObileDriverNumber">Mobile Number :</label>
+                    <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                           id="txtMObileDriverNumber"
+                           type="text">
+                </div>
+
+                <div class="form-group col-5 d-inline-block mx-3">
+                    <label class="form-label" for="txtPassword">Password :</label>
+                    <label class="form-label" for="txtDriverPassword">Password :</label>
+                    <input aria-describedby="orderId"
+                           class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                           id="txtDriverPassword" type="text">
+                </div>
+
+                <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
+                    <label class="form-label" for="txtDriverEmail">Email :</label>
+                    <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id=txtDriverEmail
+                           type="text">
+                </div>
+
+                <div class="form-group col-11 d-inline-block mx-lg-3 m-lg-1">
+                    <label class="form-label" for="formDriverFile">Driver Image :</label>
+                    <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="formDriverFile"
+                           type="file">
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- end form section-->
+
+    <br><br>
+
+    <!-- start driver button section-->
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="driverbtn">
+        <button class="btn btn-outline-primary" id="btnDriverSave" type="button">Save & Update</button>
+        <button class="btn btn-outline-info" id="btnDriverClear" type="button">Clear</button>
+    </div>
+    <br><br>
+
+    <!-- end driver button section-->
+
+    <!--start Driver table section-->
+    <section class="container">
+        <table class="table table-primary table-hover table-bordered" id="drivertbl">
+            <thead>
+            <tr>
+                <th scope="col">Driver_ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">MobileNumber</th>
+                <th scope="col">Password</th>
+                <th scope="col">Email</th>
+                <th scope="col">Image</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>
+                    <button class="btn btn-danger badge rounded-pill" style="width: 80px;" type="button">Delete</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+    <br><br>
+
+    <!--end Driver table section-->
+    <h1 id="sheduleTxt" style="text-align: center; color: #6a1a21; font-weight: bold; font-family: Arial;">Drivers
+        Shedule</h1>
+
+    <section class="container" id="driverShedule">
+        <form class="col-md-auto">
+            <div class="card col-12 mx-1">
+                <div class="card-body">
+                    <div class="form-group col-5 d-inline-block mx-3">
+                        <label class="form-label">Driver ID :</label>
+                        <select aria-label="Default select example" class="form-select">
+                            <option selected>Select Booking :</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
+                        <label class="form-label" for="Driver Name">Driver Name :</label>
+                        <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                               id="Driver Name"
+                               type="text">
+                    </div>
+                    <div class="mx-3 mt-2 col-5 d-inline-block">
+                        <label class="form-label" for="driverDate">Date :</label>
+                        <input aria-describedby="orderDate"
+                               class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                               id="driverDate" type="date">
+                    </div>
+                    <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
+                        <label class="form-label" for="driverTime">Time :</label>
+                        <input aria-describedby="orderDate"
+                               class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                               id="driverTime" type="date">
+                    </div>
+                </div>
+            </div>
+        </form>
+        <br><br>
+        <table class="table table-primary table-hover table-bordered" id="driverSheduletbl">
+            <thead>
+            <tr>
+                <th scope="col">Driver_ID</th>
+                <th scope="col">Driver_Name</th>
+                <th scope="col">Date</th>
+                <th scope="col">Time</th>
+                <th scope="col">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>
+                    <button class="btn btn-danger badge rounded-pill" style="width: 80px;" type="button">Delete</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</section>
+
+<!--start Customers section-->
+
+<!--start Customer table section-->
+<section class="container" id="customer">
+    <table class="table table-primary table-hover table-bordered" id="customertbl">
+        <thead>
+        <tr>
+            <th scope="col">Customer_ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Nic_NO</th>
+            <th scope="col">Address</th>
+            <th scope="col">Mobile_Number</th>
+            <th scope="col">Email</th>
+            <th scope="col">Image</th>
+            <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+            <td>@mdo</td>
+            <td>
+                <button class="btn btn-danger badge rounded-pill" style="width: 80px;" type="button">Delete</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+    <br><br>
+</section>
+
+<!--
+end Customer section
+-->
+
+<section class="container" id="car">
+
+    <!--start form section-->
+
+    <form class="col-md-auto">
+        <div class="card col-12 mx-1">
+            <div class="card-body">
+                <div class="form-group col-5 d-inline-block mx-3">
+                    <label class="form-label" for="exampleInputCarID">Register_Number :</label>
+                    <input aria-describedby="orderId"
+                           class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                           id="exampleInputCarID" type="text">
+                </div>
+
+                <div class="form-group col-5 d-inline-block m-lg-2">
+                    <label class="form-label" for="exampleInputCarAvailable">Car_Availability :</label>
+                    <input aria-describedby="orderDate"
+                           class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                           id=exampleInputCarAvailable type="text">
+                </div>
+
+                <div class="mx-3 mt-2 col-5 d-inline-block">
+                    <label class="form-label" for="exampleInputCarBrand">Car_Brand :</label>
+                    <select class="form-select btn-outline-primary bg-light bg-opacity-50 text-dark"
+                            id="exampleInputCarBrand" type="text">
+                    </select>
+                </div>
+
+                <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
+                    <label class="form-label" for="txtMObileCarType">Car_Type :</label>
+                    <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                           id="txtMObileCarType"
+                           type="text">
+                </div>
+
+                <div class="form-group col-5 d-inline-block mx-3">
+                    <label class="form-label" for="txtCarColor">Car_Color :</label>
+                    <input aria-describedby="orderId"
+                           class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                           id="txtCarColor" type="text">
+                </div>
+
+                <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
+                    <label class="form-label" for="txtCarTransmission">Transmission Type :</label>
+                    <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                           id="txtCarTransmission"
+                           type="text">
+                </div>
+
+                <div class="form-group col-5 d-inline-block mx-3">
+                    <label class="form-label" for="formNo_Of_Passanger">No_Of_Passanger</label>
+                    <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                           id="formNo_Of_Passanger"
+                           type="text">
+                </div>
+                <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
+                    <label class="form-label" for="formDaily_Rate">Daily_Rate</label>
+                    <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="formDaily_Rate"
+                           type="text">
+                </div>
+                <div class="form-group col-5 d-inline-block mx-3">
+                    <label class="form-label" for="formMonthly_Rate">Monthly_Rate</label>
+                    <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                           id="formMonthly_Rate"
+                           type="text">
+                </div>
+                <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
+                    <label class="form-label" for="formPrice_ExtraKM">Price_ExtraKM</label>
+                    <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                           id="formPrice_ExtraKM"
+                           type="text">
+                </div>
+                <div class="form-group col-5 d-inline-block mx-3">
+                    <label class="form-label" for="formDamage_Price">Damage_Price</label>
+                    <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                           id="formDamage_Price"
+                           type="text">
+                </div>
+                <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
+                    <label class="form-label" for="formImage">Image</label>
+                    <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="formImage"
+                           type="file">
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- end form section-->
+
+    <br><br>
+
+    <!-- start driver button section-->
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="carbtn">
+        <button class="btn btn-outline-primary" id="btnCarSave" type="button">Save & Update</button>
+        <button class="btn btn-outline-info" id="btnCarClear" type="button">Clear</button>
+    </div>
+    <br><br>
+
+    <!-- end driver button section-->
+
+    <!--start Driver table section-->
+    <section class="container">
+        <table class="table table-primary table-hover table-bordered" id="cartbl">
+            <thead>
+            <tr>
+                <th scope="col">Reg_Num</th>
+                <th scope="col">Availability</th>
+                <th scope="col">Brand</th>
+                <th scope="col">Type</th>
+                <th scope="col">Color</th>
+                <th scope="col">Transmission_Type</th>
+                <th scope="col">Passanger</th>
+                <th scope="col">Daily_Rate</th>
+                <th scope="col">Monthly_Rate</th>
+                <th scope="col">Price_ExtraKM</th>
+                <th scope="col">Damage_Price</th>
+                <th scope="col">Image</th>
+                <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>
+                    <button class="btn btn-danger badge rounded-pill" style="width: 80px;" type="button">Delete</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+    <br><br>
+
+    <!--end Driver table section-->
+</section>
+
+<section class="container" id="booking">
+
+    <!--start form section-->
+
+    <form class="col-md-auto">
+        <div class="card col-12 mx-1">
+            <div class="card-body">
+                <div class="form-group col-5 d-inline-block mx-3">
+                    <select aria-label="Default select example" class="form-select">
+                        <option selected>Select Car :</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+
+                <div class="form-group col-5 d-inline-block m-lg-2">
+                    <select aria-label="Default select example" class="form-select">
+                        <option selected>Select Driver :</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </form>
+
+    <!-- end form section-->
+
+    <br><br>
+
+    <!-- start booking button section-->
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="bookingbtn">
+        <button class="btn btn-outline-danger" id="btnCancelBooking" type="button">Cancel Booking</button>
+        <button class="btn btn-outline-info" id="btnConfoirmBooking" type="button">Conform Booking</button>
+    </div>
+    <br><br>
+    <!-- end booking button section-->
+
+
+    <!--start Booking table section-->
+    <section class="container">
+        <table class="table table-primary table-hover table-bordered" id="bookingtbl">
+            <thead>
+            <tr>
+                <th scope="col">Booking_ID</th>
+                <th scope="col">Customer_ID</th>
+                <th scope="col">Car_ID</th>
+                <th scope="col">Driver_ID</th>
+                <th scope="col">Pick_Up_Date</th>
+                <th scope="col">Pick_up_Time</th>
+                <th scope="col">Drop_Of_Date</th>
+                <th scope="col">Drop_Off_Time</th>
+                <th scope="col">Rent_Price</th>
+                <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>
+                    <button class="btn btn-danger badge rounded-pill" style="width: 80px;" type="button">Delete</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</section>
+<br><br>
+
+<!--end booking section-->
+
+<!--start payment section -->
+
+<section class="container" id="payment">
+
+    <!--start form section-->
+
+    <form class="col-md-auto">
+        <div class="card col-12 mx-1">
+            <div class="card-body">
+                <div class="form-group col-5 d-inline-block mx-3">
+                    <label class="form-label" for="examplePayment_ID">Payment_ID :</label>
+                    <input aria-describedby="orderId"
+                           class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                           id="examplePayment_ID" type="text">
+                </div>
+
+                <div class="form-group col-5 d-inline-block m-lg-2">
+                    <label class="form-label">Car_Availability :</label>
+                    <select aria-label="Default select example" class="form-select">
+                        <option selected>Select Booking :</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+
+                <div class="mx-3 mt-2 col-5 d-inline-block">
+                    <label class="form-label" for="orderDate">Drop Of Last Date :</label>
+                    <input aria-describedby="orderDate"
+                           class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                           id=orderDate type="date">
+                </div>
+
+                <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
+                    <label class="form-label" for="txtDamaging_Price">Damaging Price :</label>
+                    <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                           id="txtDamaging_Price"
+                           type="text">
+                </div>
+
+                <div class="form-group col-5 d-inline-block mx-3">
+                    <label class="form-label" for="txtDiscount">Discount :</label>
+                    <input aria-describedby="orderId"
+                           class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                           id="txtDiscount" type="text">
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- end form section-->
+
+    <br><br>
+
+    <!-- start booking button section-->
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="paymentbtn">
+        <button class="btn btn-outline-danger" id="btnAddpayment" type="button">Add Payment</button>
+        <button class="btn btn-outline-info" id="btnUpdatedPayment" type="button">Update Payment</button>
+    </div>
+    <br><br>
+    <!-- end booking button section-->
+    <!--start Booking table section-->
+    <section class="container">
+        <table class="table table-primary table-hover table-bordered" id="paymenttbl">
+            <thead>
+            <tr>
+                <th scope="col">Payment_ID</th>
+                <th scope="col">Drof_Off_Date</th>
+                <th scope="col">Drof_Off_Last_Day</th>
+                <th scope="col">Car_ID</th>
+                <th scope="col">Customer_ID</th>
+                <th scope="col">Driver_ID</th>
+                <th scope="col">Rent_Price</th>
+                <th scope="col">Damaging_Price</th>
+                <th scope="col">Discount</th>
+                <th scope="col">Total_Price</th>
+                <th scope="col">Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th>1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+                <td>
+                    <button class="btn btn-danger badge rounded-pill" style="width: 80px;" type="button">Delete</button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+    <script>
+        $("#dashboard").css("display", "");
+        $("#admin").css("display", "none");
+        $("#driver").css("display", "none");
+        $("#customer").css("display", "none");
+        $("#car").css("display", "none");
+        $("#booking").css("display", "none");
+        $("#payment").css("display", "none");
+
+        $("#dashboardlink").click(function () {
+            $("#dashboard").css("display", "");
+            $("#admin").css("display", "none");
+            $("#driver").css("display", "none");
+            $("#customer").css("display", "none");
+            $("#car").css("display", "none");
+            $("#booking").css("display", "none");
+            $("#payment").css("display", "none");
+        });
+
+        $("#adminlink").click(function () {
+            $("#dashboard").css("display", "none");
+            $("#admin").css("display", "block");
+            $("#driver").css("display", "none");
+            $("#customer").css("display", "none");
+            $("#car").css("display", "none");
+            $("#booking").css("display", "none");
+            $("#payment").css("display", "none");
+        });
+
+        $("#driverlink").click(function () {
+            $("#dashboard").css("display", "none");
+            $("#admin").css("display", "none");
+            $("#driver").css("display", "block");
+            $("#customer").css("display", "none");
+            $("#car").css("display", "none");
+            $("#booking").css("display", "none");
+            $("#payment").css("display", "none");
+        });
+
+        $("#linkCustomers").click(function () {
+            $("#dashboard").css("display", "none");
+            $("#admin").css("display", "none");
+            $("#driver").css("display", "none");
+            $("#customer").css("display", "block");
+            $("#car").css("display", "none");
+            $("#booking").css("display", "none");
+            $("#payment").css("display", "none");
+        });
+
+        $("#linkCars").click(function () {
+            $("#dashboard").css("display", "none");
+            $("#admin").css("display", "none");
+            $("#driver").css("display", "none");
+            $("#customer").css("display", "none");
+            $("#car").css("display", "block");
+            $("#booking").css("display", "none");
+            $("#payment").css("display", "none");
+        });
+
+        $("#linkBooking").click(function () {
+            $("#dashboard").css("display", "none");
+            $("#admin").css("display", "none");
+            $("#driver").css("display", "none");
+            $("#customer").css("display", "none");
+            $("#car").css("display", "none");
+            $("#booking").css("display", "block");
+            $("#payment").css("display", "none");
+        });
+
+        $("#linkPayment").click(function () {
+            $("#dashboard").css("display", "none");
+            $("#admin").css("display", "none");
+            $("#driver").css("display", "none");
+            $("#customer").css("display", "none");
+            $("#car").css("display", "none");
+            $("#booking").css("display", "none");
+            $("#payment").css("display", "block");
+        });
+
+    </script>
+    <!--<script src="assets/script/script.js"></script>-->
+</body>
+</html>

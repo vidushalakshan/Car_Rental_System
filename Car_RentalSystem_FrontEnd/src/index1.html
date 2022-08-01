@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Rental System</title>
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Crete+Round&display=swap" rel="stylesheet">
+    <script crossorigin="anonymous"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        /*start navbar style*/
+
+        #baar {
+            position: fixed;
+            z-index: 1;
+            width: 100%;
+        }
+
+        #logos {
+            font-size: 40px;
+            color: red;
+            text-decoration-line: none;
+            font-family: 'Crete Round', serif;
+        }
+
+        /*  end navbar style*/
+
+
+        /* start home style*/
+
+        #hometext {
+            color: white;
+            position: absolute;
+            bottom: 0px;
+            top: 167px;
+            left: 127px;
+            right: 0;
+            margin: auto;
+            font-family: 'Crete Round', serif;
+        }
+
+        #homeimg {
+            filter: blur(3px);
+            -webkit-filter: blur(3px);
+        }
+
+        #text1 {
+            /*color: #efaf00;*/
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        #text2 {
+            /*color: #efaf00;*/
+            color: white;
+            font-size: 50px;
+            font-weight: bold;
+        }
+
+        #text3 {
+            /* color: #efaf00;*/
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        #btncontact {
+            position: relative;
+            width: 151px;
+            height: 50px;
+            top: 78px;
+        }
+
+        /*end home style*/
+
+
+        /*start about style*/
+
+        #about {
+            height: 300px;
+        }
+
+        #aboutmain {
+            height: 300px;
+        }
+
+        #aboutimg {
+            height: 300px;
+            width: 405px;
+        }
+
+        #about1 {
+            font-family: 'Crete Round', serif;
+            font-size: 35px;
+            font-weight: bold;
+            color: peru;
+        }
+
+        #about2 {
+            position: relative;
+            top: 10px;
+            font-family: 'Crete Round', serif;
+            font-size: 40px;
+            font-weight: bold;
+            color: red;
+        }
+
+        #about3 {
+            position: relative;
+            top: 30px;
+            font-family: 'Crete Round', serif;
+        }
+
+        #vehicalmain {
+            width: 100%;
+        }
+
+        #vehical1 {
+            font-family: 'Crete Round', serif;
+            color: #0c63e4;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #vehical2 {
+            font-family: 'Crete Round', serif;
+            text-align: center;
+            font-size: 20px;
+        }
+
+        #btnmore {
+            position: relative;
+            width: 151px;
+            height: 50px;
+        }
+
+        #contact1 {
+            text-align: center;
+            position: relative;
+            top: 14px;
+            font-family: 'Crete Round', serif;
+            color: #d63384;
+        }
+
+        #contact {
+            background-color: #651593;
+            position: relative;
+            top: 10px;
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+
+<!--start navbar-->
+<header>
+    <section id="baar">
+        <nav class="navbar navbar-expand-lg bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#" id="logos">Car Rental</a>
+                <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                        class="navbar-toggler" data-bs-target="#navbarSupportedContent"
+                        data-bs-toggle="collapse" type="button">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item ">
+                            <a aria-current="page" class="nav-link active" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Cars</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
+                               role="button">
+                                User
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="admin.html">Admin</a></li>
+                                <li><a class="dropdown-item" href="#">Driver</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex" role="search">
+                        <input aria-label="Search" class="form-control me-2" placeholder="Search" type="search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </section>
+</header>
+<!--close navbar-->
+
+<!--start home content-->
+
+<section class="container">
+    <div class="card text-bg-dark">
+        <img alt="..." class="img-fluid" id="homeimg" src="assets/image/home.webp">
+        <div class="card-img-overlay" id="hometext">
+            <h3 class="card-title" id="text1">For Rent Rs.20000 Per Day</h3><br><br>
+            <h1 class="card-text" id="text2">Reserved Now and Get 50%</h1><br><br>
+            <h2 class="card-text" id="text3">Off .</h2>
+            <button class="btn btn-outline-danger" id="btncontact" type="button">Contact</button>
+        </div>
+    </div>
+</section>
+<!--end home content-->
+
+<div class="card mb-3" id="aboutmain" style="max-width: max-content; ">
+    <div class="row g-0" id="about">
+        <div class="col-md-4">
+            <img alt="..." class="img-fluid rounded-start" id="aboutimg" src="assets/image/about.webp">
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h3 class="card-title" id="about1">About Us</h3>
+                <h1 class="card-title" id="about2">Welcome to Car Rental System</h1>
+                <p class="card-text" id="about3">With over 30 years of experience in the industry, we strive to
+                    offer the highest levels of customer service and a highly personalised service to all our
+                    customers who are on the lookout for Sri Lanka car rental opportunities. With one of the
+                    largest and most modern and varied fleets in Sri Lanka, our service is backed by a networked
+                    front office, fully-fledged mechanical servicing and valet servicing onsite.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end about content-->
+
+<!--   start vehical fleet-->
+<h1 id="vehical1">Vehical Fleet</h1>
+<h3 id="vehical2">We offer a wide range of options from economy to luxury. The fleet consists of cars.</h3>
+<div class="row row-cols-1 row-cols-md-3 g-4" id="vehicalmain">
+    <div class="col">
+        <div class="card">
+            <img alt="..." class="card-img-top" src="assets/image/alto.webp">
+            <div class="card-body">
+                <h5 class="card-title">SUZUKI ALTO PREMIUM</h5>
+                <p class="card-text">A/C, Power Steering/CD Player,Manual</p>
+                <button class="btn btn-primary btn-lg" type="button">QUICK INQUIRY</button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img alt="..." class="card-img-top" src="assets/image/PERODUA.jpeg">
+            <div class="card-body">
+                <h5 class="card-title">PERODUA (DAIHATSU) AXIA</h5>
+                <p class="card-text">A/C, Power Steering, CD Player, Auto</p>
+                <button class="btn btn-primary btn-lg" type="button">QUICK INQUIRY</button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img alt="..." class="card-img-top" src="assets/image/toyota_prius_C.jpg">
+            <div class="card-body">
+                <h5 class="card-title">TOYOTA AQUA PRIUS C</h5>
+                <p class="card-text">A/C, Power Steering, CD Player, Auto</p>
+                <button class="btn btn-primary btn-lg" type="button">QUICK INQUIRY</button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img alt="..." class="card-img-top" src="assets/image/corolla.jpg">
+            <div class="card-body">
+                <h5 class="card-title">TOYOTA COROLLA NKR 165 AXIO HYBRID</h5>
+                <p class="card-text">A/C, Power Steering, CD Player, Auto</p>
+                <button class="btn btn-primary btn-lg" type="button">QUICK INQUIRY</button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img alt="..." class="card-img-top" src="assets/image/allion3.jpeg">
+            <div class="card-body">
+                <h5 class="card-title">TOYOTA ALLION 260</h5>
+                <p class="card-text">A/C, Power Steering, CD Player, Auto</p>
+                <button class="btn btn-primary btn-lg" type="button">QUICK INQUIRY</button>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <div class="card">
+            <img alt="..." class="card-img-top" src="assets/image/bezza2.jpeg">
+            <div class="card-body">
+                <h5 class="card-title">PERODUA BEZZA PRIME SEDAN</h5>
+                <p class="card-text">Perodua Bezza Prime Sedan
+                    A/C, Power Steering, CD Player, Auto</p>
+                <button class="btn btn-primary btn-lg" type="button">QUICK INQUIRY</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="text-center">
+    <button class="btn btn-outline-danger" id="btnmore" type="button">More</button>
+</div>
+<!--end car content-->
+
+<!--start contact content-->
+<section class="container" id="contact">
+    <h1 id="contact1">Contact Us</h1>
+    <form class="col-md-auto">
+        <div class="mb-3">
+            <label class="form-label fw-bold bg-white" for="exampleInputName">Full Name</label>
+            <input aria-describedby="emailHelp" class="form-control" id="exampleInputName"
+                   placeholder="Full Name"
+                   type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label fw-bold bg-white" for="exampleInputEmail1">Email address</label>
+            <input aria-describedby="emailHelp" class="form-control" id="exampleInputEmail1"
+                   placeholder="Email address"
+                   type="text">
+        </div>
+        <div class="mb-3">
+            <label class="form-label fw-bold bg-white" for="exampleInputPoneNumber">Phone number</label>
+            <input aria-describedby="emailHelp" class="form-control" id="exampleInputPoneNumber"
+                   placeholder="Phone number" type="text">
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-outline-info" id="customerClear" type="button">Submit</button>
+        </div>
+    </form>
+</section>
+</section>
+</body>
+</html>
