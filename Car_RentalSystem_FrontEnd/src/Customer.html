@@ -18,6 +18,7 @@
             background-color: #030405;
             color: #0f32a5;
         }
+
         #txtnav {
             position: relative;
             text-align: center;
@@ -43,6 +44,44 @@
             height: 62px;
         }
 
+
+        #customercontent {
+            width: 82%;
+            position: relative;
+            left: 13%;
+        }
+
+        #detailsCustomer {
+            font-family: 'Crete Round', serif;
+            font-weight: bold;
+            color: #20c997;
+            position: relative;
+        }
+
+        #paymentCustomer {
+            font-family: 'Crete Round', serif;
+            font-weight: bold;
+            color: #20c997;
+            position: relative;
+        }
+
+        #customerPayment {
+            width: 82%;
+            position: relative;
+            left: 13%;
+        }
+
+        #paymentbtn  {
+            position: relative;
+            right: 6%;
+        }
+
+        #customerbtn {
+            position: relative;
+            right: 6%;
+        }
+
+
     </style>
 </head>
 <body>
@@ -58,5 +97,112 @@
         </nav>
     </div>
 </div>
+
+<!--End top naw bar section-->
+
+<h1 id="detailsCustomer">Customer Details</h1>
+
+<form class="col-md-auto">
+    <div class="card col-12 mx-1">
+        <div class="card-body" id="customercontent">
+            <div class="form-group col-5 d-inline-block mx-3">
+                <label class="form-label" for="CustomerInputID" id="CustomerIDBtn">Customer_ID :</label>
+                <input aria-describedby="orderId"
+                       class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                       id="CustomerInputID" type="text">
+            </div>
+
+            <div class="form-group col-5 d-inline-block m-lg-2">
+                <label class="form-label" for="CustomerInputName" id="CustomerNameBtn">Full Name :</label>
+                <input aria-describedby="orderDate"
+                       class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                       id=CustomerInputName type="text">
+            </div>
+
+            <div class="mx-3 mt-2 col-5 d-inline-block">
+                <label class="form-label" for="exampleInputAddress" id="CustomerNicNoBtn">Nic_No :</label>
+                <select class="form-select btn-outline-primary bg-light bg-opacity-50 text-dark"
+                        id="exampleInputAddress" type="text">
+                </select>
+            </div>
+
+            <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
+                <label class="form-label" for="txtMObileNumber" id="CustomerAddressBtn">Address :</label>
+                <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                       id="txtMObileNumber"
+                       type="text">
+            </div>
+
+            <div class="form-group col-5 d-inline-block mx-3">
+                <label class="form-label" for="txtPassword" id="CustomerMobileNumBtn">Mobile Number :</label>
+                <input aria-describedby="orderId"
+                       class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                       id="txtPassword" type="text">
+            </div>
+
+            <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
+                <label class="form-label" for="txtAdminEmail" id="CustomerEmailBtn">Email :</label>
+                <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id=txtAdminEmail
+                       type="text">
+            </div>
+
+            <div class="form-group col-11 d-inline-block mx-lg-3 m-lg-1">
+                <label class="form-label" for="formFile" id="CustomerImageImg">Customer Image :</label>
+                <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="formFile"
+                       type="file">
+            </div>
+        </div>
+    </div>
+</form>
+<br><br>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end" id="customerbtn">
+    <button class="btn btn-outline-danger" id="btnCancelBooking" type="button">Add</button>
+    <button class="btn btn-outline-info" id="btnConfoirmBooking" type="button">Clear</button>
+</div>
+<br>
+<br>
+
+<h1 id="paymentCustomer">Payment Details</h1>
+
+<form class="col-md-auto">
+    <div class="card col-12 mx-1">
+        <div class="card-body" id="customerPayment">
+            <div class="form-group col-5 d-inline-block mx-3">
+                <label class="form-label" for="paymentInputID" id="PaymentIDBtn">Card Number:</label>
+                <input aria-describedby="orderId"
+                       class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                       id="paymentInputID" type="text">
+            </div>
+
+            <div class="form-group col-5 d-inline-block m-lg-2">
+                <label class="form-label" for="PaymentInputName" id="paymentNameBtn">Name On Card :</label>
+                <input aria-describedby="orderDate"
+                       class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                       id=PaymentInputName type="text">
+            </div>
+
+            <div class="mx-3 mt-2 col-5 d-inline-block">
+                <label class="form-label" for="paymentInputcvv" id="paymentNicNoBtn">CVV :</label>
+                <select class="form-select btn-outline-primary bg-light bg-opacity-50 text-dark"
+                        id="paymentInputcvv" type="text">
+                </select>
+            </div>
+
+            <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
+                <label class="form-label" for="paymentexpiredate" id="paymentExpiryDate">Expiry Date :</label>
+                <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                       id="paymentexpiredate"
+                       type="date">
+            </div>
+        </div>
+    </div>
+</form>
+<br><br>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end" id="paymentbtn">
+    <button class="btn btn-outline-danger" id="paymentaddbtn" type="button">Payment</button>
+    <button class="btn btn-outline-info" id="paymentClearbtn" type="button">Clear</button>
+</div>
+<br>
+<br>
 </body>
 </html>
