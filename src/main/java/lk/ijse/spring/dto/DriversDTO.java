@@ -9,7 +9,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @Data
 @ToString
-public class Drivers {
+public class DriversDTO {
     private String Driver_Id;
     private String Driver_Name;
     private String Driver_Address;

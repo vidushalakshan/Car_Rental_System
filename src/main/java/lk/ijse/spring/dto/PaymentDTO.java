@@ -9,7 +9,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @Data
 @ToString
-public class Payment {
+public class PaymentDTO {
     private String payment_ID;
     private String drop_Of_Date;
     private String drop_Of_Last_Day;
