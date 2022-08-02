@@ -44,7 +44,7 @@ public class CustomerController {
 
     @GetMapping(path = "/search", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil searchCustomer(@RequestParam String search) {
-        return new ResponseUtil(200, "OK", customerService.searchCustomer(search, search));
+        return new ResponseUtil(200, "OK", customerService.searchCustomer(search));
     }
 
     @GetMapping(path = "/generate", produces = MediaType.APPLICATION_JSON_VALUE)

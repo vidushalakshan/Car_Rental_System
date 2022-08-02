@@ -1,7 +1,5 @@
 package lk.ijse.spring.service.impl;
 
-import lk.ijse.spring.dto.CustomerDTO;
-import lk.ijse.spring.dto.StafDTO;
 import lk.ijse.spring.entity.Staf;
 import lk.ijse.spring.repo.StafRepo;
 import lk.ijse.spring.service.StafService;

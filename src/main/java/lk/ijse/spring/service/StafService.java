@@ -1,8 +1,5 @@
 package lk.ijse.spring.service;
 
-import lk.ijse.spring.dto.CustomerDTO;
-import lk.ijse.spring.dto.StafDTO;
-
 import java.util.List;
 
 public interface StafService {

@@ -20,7 +20,7 @@ import javax.sql.DataSource;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(basePackages = "lk.ijse.spring.repo")
+@EnableJpaRepositories(basePackages ="lk.ijse.spring.repo")
 @PropertySource("classpath:application.properties")
 public class JPAConfig {
 

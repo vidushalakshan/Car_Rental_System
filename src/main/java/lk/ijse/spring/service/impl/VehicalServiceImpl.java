@@ -25,7 +25,7 @@ public class VehicalServiceImpl  implements VehicalService {
     @Override
     public void saveVehical(VehicalDTO vehicalDTO) {
         if (!vehicalRepo.existsById(vehicalDTO.getRe_Num())){
-            vehicalRepo.save(modelMappers.map(vehicalDTO, Vehical.class));
+ /*           vehicalRepo.save(modelMappers.map(vehicalDTO, Vehical.class));*/
         }else {
             throw new RuntimeException("Vehical Already Exist");
         }
