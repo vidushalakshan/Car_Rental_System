@@ -11,11 +11,12 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Data
 @Entity
-public class Staf {
+public class Driver {
     @Id
-    private String staf_ID;
-    private String name;
-    private String address;
-    private String mobile_No;
-    private String rype;
+    private String Driver_Id;
+    private String Driver_Name;
+    private String Driver_Address;
+    private String Driver_MobileNo;
+    private String Driver_Password;
+    private String Driver_Email;
 }
