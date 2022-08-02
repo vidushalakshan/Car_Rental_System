@@ -20,6 +20,7 @@
         <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -144,7 +145,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1659337999189</updated>
-      <workItem from="1659338000371" duration="25419000" />
+      <workItem from="1659338000371" duration="29277000" />
     </task>
     <servers />
   </component>
@@ -152,14 +153,22 @@
     <option name="version" value="2" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="395" y="87" key="#Inspections" timestamp="1659419512263">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="395" y="87" key="#Inspections/0.0.1536.816/-1366.111.1366.720@0.0.1536.816" timestamp="1659419512263" />
     <state x="223" y="63" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1659370234720">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="223" y="63" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.816/-1366.111.1366.720@0.0.1536.816" timestamp="1659370234720" />
-    <state x="499" y="155" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1659415805800">
+    <state x="574" y="115" key="#com.intellij.ide.util.MemberChooser" timestamp="1659421353638">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="499" y="155" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.816/-1366.111.1366.720@0.0.1536.816" timestamp="1659415805800" />
+    <state x="574" y="115" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816/-1366.111.1366.720@0.0.1536.816" timestamp="1659421353638" />
+    <state x="499" y="155" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1659418057773">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="499" y="155" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.816/-1366.111.1366.720@0.0.1536.816" timestamp="1659418057773" />
     <state x="549" y="163" key="FileChooserDialogImpl" timestamp="1659339770872">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
@@ -220,5 +229,9 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="209" y="29" key="new project wizard/0.0.1536.816/-1366.111.1366.720@0.0.1536.816" timestamp="1659338519630" />
+    <state x="425" y="185" key="run.anything.popup" timestamp="1659419125118">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="425" y="185" key="run.anything.popup/0.0.1536.816/-1366.111.1366.720@0.0.1536.816" timestamp="1659419125118" />
   </component>
 </project>
