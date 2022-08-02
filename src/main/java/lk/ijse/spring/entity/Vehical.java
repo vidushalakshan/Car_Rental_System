@@ -14,12 +14,14 @@ import javax.persistence.Id;
 public class Vehical {
     @Id
     private String re_Num;
-    private String vehical_Type_ID;
-    private String fuel_Type;
-    private String color;
-    private String Transmission_Type;
-    private double running_Km;
+    private String car_Availability;
+    private String car_Brand;
+    private String car_Type;
+    private String car_Color;
+    private double Transmission_Type;
     private int no_Of_Passenger;
-    private String brand;
-    private String status;
+    private String daily_Rate;
+    private String monthly_Rate;
+    private String price_ExtraKM;
+    private String damage_Price;
 }
