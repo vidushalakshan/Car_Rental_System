@@ -485,35 +485,34 @@
 
     <!--start form section-->
 
-    <form class="col-md-auto">
+    <form class="col-md-auto" id="driverForms">
         <div class="card col-12 mx-1">
             <div class="card-body">
                 <div class="form-group col-5 d-inline-block mx-3">
                     <label class="form-label" for="exampleInputDriverID" id="btnDriverID">Driver ID :</label>
                     <input aria-describedby="orderId"
                            class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                           id="exampleInputDriverID" type="text">
+                           id="exampleInputDriverID" name="Driver_Id" type="text" >
                 </div>
 
                 <div class="form-group col-5 d-inline-block m-lg-2">
                     <label class="form-label" for="exampleInputDriverName" id="btnDriverName">Full Name :</label>
                     <input aria-describedby="orderDate"
                            class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                           id=exampleInputDriverName type="text">
+                           id="exampleInputDriverName" name="Driver_Name" type="text">
                 </div>
 
-                <div class="mx-3 mt-2 col-5 d-inline-block">
+                <div class="form-group col-5 d-inline-block mx-3">
                     <label class="form-label" for="exampleInputDriverAddress" id="btnDriverAddress">Address :</label>
-                    <select class="form-select btn-outline-primary bg-light bg-opacity-50 text-dark"
-                            id="exampleInputDriverAddress" type="text">
-                    </select>
+                    <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                            id="exampleInputDriverAddress" name="Driver_Address" type="text">
                 </div>
 
                 <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
                     <label class="form-label" for="txtMObileDriverNumber" id="btnMobileNumber">Mobile Number :</label>
                     <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
                            id="txtMObileDriverNumber"
-                           type="text">
+                           name="Driver_MobileNo" type="text">
                 </div>
 
                 <div class="form-group col-5 d-inline-block mx-3">
@@ -521,20 +520,20 @@
                     <label class="form-label" for="txtDriverPassword">Password :</label>
                     <input aria-describedby="orderId"
                            class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                           id="txtDriverPassword" type="text">
+                           name="Driver_Password" id="txtDriverPassword" type="text">
                 </div>
 
                 <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
                     <label class="form-label" for="txtDriverEmail" id="btnDriverEmail">Email :</label>
-                    <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id=txtDriverEmail
-                           type="text">
+                    <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="txtDriverEmail"
+                           name="Driver_Email" type="text" >
                 </div>
 
-                <div class="form-group col-11 d-inline-block mx-lg-3 m-lg-1">
+               <!-- <div class="form-group col-11 d-inline-block mx-lg-3 m-lg-1">
                     <label class="form-label" for="formDriverFile">Driver Image :</label>
                     <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="formDriverFile"
                            type="file">
-                </div>
+                </div>-->
             </div>
         </div>
     </form>
@@ -546,7 +545,7 @@
     <!-- start driver button section-->
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="driverbtn">
-        <button class="btn btn-outline-primary" id="btnDriverSave" type="button">Save & Update</button>
+        <button class="btn btn-outline-primary" id="btnDriverSave" type="button">Save</button>
         <button class="btn btn-outline-primary" id="btnDriverUpdate" type="button">Update</button>
         <button class="btn btn-outline-danger" id="btnDriverDelete" type="button">Delete</button>
         <button class="btn btn-outline-info" id="btnDriverClear" type="button">Clear</button>
@@ -567,21 +566,17 @@
                 <th scope="col">Password</th>
                 <th scope="col">Email</th>
                 <th scope="col">Image</th>
-                <th scope="col">Actions</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody id="driverBodyTbl">
             <tr>
-                <th>1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>
-                    <button class="btn btn-danger badge rounded-pill" style="width: 80px;" type="button">Delete</button>
-                </td>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
             </tbody>
         </table>
@@ -695,7 +690,7 @@ end Customer section
 
     <!--start form section-->
 
-    <form class="col-md-auto">
+    <form class="col-md-auto" id="driverForm">
         <div class="card col-12 mx-1">
             <div class="card-body">
                 <div class="form-group col-5 d-inline-block mx-3">
@@ -809,26 +804,22 @@ end Customer section
                 <th scope="col">Price_ExtraKM</th>
                 <th scope="col">Damage_Price</th>
                 <th scope="col">Image</th>
-                <th scope="col">Action</th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <th>1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>
-                    <button class="btn btn-danger badge rounded-pill" style="width: 80px;" type="button">Delete</button>
-                </td>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
             </tbody>
         </table>
@@ -1238,6 +1229,103 @@ end Customer section
 
    /* start driver content*/
 
+    var baseUrlDriver = "http://localhost:8080/Car_Rental_System_war/api/driver"
+
+
+    $("#btnDriverSave").click(function () {
+        saveDriver();
+    });
+
+    $("#btnDriverDelete").click(function () {
+        deleteDriver();
+    });
+
+    $("#btnDriverClear").click(function () {
+        clearDriverForm();
+    });
+
+    loadAllDriver();
+
+    function saveDriver() {
+        var data = $("#driverForms").serialize();
+        $.ajax({
+            url: baseUrlDriver,
+            method: "POST",
+            data: data,
+            success: function (response) {
+                if (response.code == 200) {
+                    alert("Successfully Driver Registered..");
+                    loadAllDriver();
+                    clearDriverForm();
+                }
+            },
+            error: function (ob) {
+                alert(ob.responseJSON.message);
+            }
+        });
+    }
+
+    function loadAllDriver() {
+        $("#driverBodyTbl").empty();
+        $.ajax({
+            url: baseUrlDriver,
+            method: "GET",
+            success: function (response) {
+                for (const dr of response.data) {
+                    let rows =`<tr><td>${dr.Driver_Id}</td><td>${dr.Driver_Name}</td><td>${dr.Driver_Address}</td><td>${dr.Driver_MobileNo}</td><td>${dr.Driver_Password}</td><td>${dr.Driver_Email}</td><td></td></tr>`;
+                    $("#driverBodyTbl").append(rows);
+                }
+                bindClickEventsDriver();
+            },
+            error: function (ob) {
+                alert(ob.responseJSON.message);
+            }
+        });
+    }
+
+    function bindClickEventsDriver() {
+        $("#driverBodyTbl>tr").click(function () {
+            //Get values from the selected row
+            let id = $(this).children().eq(0).text();
+            let name = $(this).children().eq(1).text();
+            let address = $(this).children().eq(2).text();
+            let mobileNum = $(this).children().eq(3).text();
+            let password = $(this).children().eq(4).text();
+            let email = $(this).children().eq(5).text();
+
+            //Set values to the text-fields
+            $("#exampleInputDriverID").val(id);
+            $("#exampleInputDriverName").val(name);
+            $("#exampleInputDriverAddress").val(address);
+            $("#txtMObileDriverNumber").val(mobileNum);
+            $("#txtDriverPassword").val(password);
+            $("#txtDriverEmail").val(email);
+        });
+    }
+
+    function clearDriverForm() {
+        $("#exampleInputDriverID").val("");
+        $("#exampleInputDriverName").val("");
+        $("#exampleInputDriverAddress").val("");
+        $("#txtMObileDriverNumber").val("");
+        $("#txtDriverPassword").val("");
+        $("#txtDriverEmail").val("");
+    }
+
+    function deleteDriver() {
+        let id = $("#exampleInputDriverID").val();
+        $.ajax({
+            url: baseUrlDriver + `?id=${id}`, method: "DELETE", success: function (resp) {
+                if (resp.code == 200) {
+                    alert("Are You sure delete Driver ID :"+id);
+                    loadAllDriver();
+                    clearDriverForm();
+                } else if (resp.code == 400) {
+                    alert(resp.data);
+                }
+            }
+        });
+    }
 
 </script>
 </body>
