@@ -1244,6 +1244,10 @@ end Customer section
         clearDriverForm();
     });
 
+    $("#btnDriverUpdate").click(function () {
+        updateDriver();
+    });
+
     loadAllDriver();
 
     function saveDriver() {
@@ -1323,6 +1327,34 @@ end Customer section
                 } else if (resp.code == 400) {
                     alert(resp.data);
                 }
+            }
+        });
+    }
+
+    function updateDriver() {
+        var DriverOb = {
+            ids: $("#exampleInputDriverID").val(),
+            names:  $("#exampleInputDriverName").val(),
+            addresss: $("#exampleInputDriverAddress").val(),
+            mobileNums:$("#txtMObileDriverNumber").val(),
+            passwords: $("#txtDriverPassword").val(),
+            emails:$("#txtDriverEmail").val()
+        }
+
+        $.ajax({
+            url : baseUrlDriver,
+            method : "PUT",
+            contentType:"application/json",
+            data: JSON.stringify(DriverOb),
+            success:function (response) {
+                if (response.code ==200) {
+                    alert("SuccessFully Updated..")
+                    loadAllDriver();
+                    clearDriverForm();
+                }
+            },
+            error: function (ob) {
+                alert(ob.responseJSON.message);
             }
         });
     }
