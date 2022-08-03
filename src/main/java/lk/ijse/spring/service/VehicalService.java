@@ -3,6 +3,8 @@ package lk.ijse.spring.service;
 import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.dto.VehicalDTO;
 
+import java.util.List;
+
 public interface VehicalService {
 
     void saveVehical(VehicalDTO vehicalDTO);
@@ -11,5 +13,9 @@ public interface VehicalService {
 
     void updateVehical(VehicalDTO vehicalDTO);
 
-    CustomerDTO searchVehical(String id);
+    VehicalDTO searchVehical(String id);
+
+    String generateCustomerId();
+
+    List<VehicalDTO> getAllCustomers();
 }

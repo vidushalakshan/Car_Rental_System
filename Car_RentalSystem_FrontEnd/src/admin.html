@@ -492,7 +492,7 @@
                     <label class="form-label" for="exampleInputDriverID" id="btnDriverID">Driver ID :</label>
                     <input aria-describedby="orderId"
                            class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                           id="exampleInputDriverID" name="Driver_Id" type="text" >
+                           id="exampleInputDriverID" name="Driver_Id" type="text">
                 </div>
 
                 <div class="form-group col-5 d-inline-block m-lg-2">
@@ -505,7 +505,7 @@
                 <div class="form-group col-5 d-inline-block mx-3">
                     <label class="form-label" for="exampleInputDriverAddress" id="btnDriverAddress">Address :</label>
                     <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                            id="exampleInputDriverAddress" name="Driver_Address" type="text">
+                           id="exampleInputDriverAddress" name="Driver_Address" type="text">
                 </div>
 
                 <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
@@ -520,20 +520,20 @@
                     <label class="form-label" for="txtDriverPassword">Password :</label>
                     <input aria-describedby="orderId"
                            class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                           name="Driver_Password" id="txtDriverPassword" type="text">
+                           id="txtDriverPassword" name="Driver_Password" type="text">
                 </div>
 
                 <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
                     <label class="form-label" for="txtDriverEmail" id="btnDriverEmail">Email :</label>
                     <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="txtDriverEmail"
-                           name="Driver_Email" type="text" >
+                           name="Driver_Email" type="text">
                 </div>
 
-               <!-- <div class="form-group col-11 d-inline-block mx-lg-3 m-lg-1">
-                    <label class="form-label" for="formDriverFile">Driver Image :</label>
-                    <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="formDriverFile"
-                           type="file">
-                </div>-->
+                <!-- <div class="form-group col-11 d-inline-block mx-lg-3 m-lg-1">
+                     <label class="form-label" for="formDriverFile">Driver Image :</label>
+                     <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="formDriverFile"
+                            type="file">
+                 </div>-->
             </div>
         </div>
     </form>
@@ -688,7 +688,7 @@ end Customer section
 
 <section class="container" id="car">
 
-    <!--start form section-->
+    <!--start Car section-->
 
     <form class="col-md-auto" id="driverForm">
         <div class="card col-12 mx-1">
@@ -777,17 +777,19 @@ end Customer section
 
     <br><br>
 
-    <!-- start driver button section-->
+    <!-- start Car button section-->
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="carbtn">
-        <button class="btn btn-outline-primary" id="btnCarSave" type="button">Save & Update</button>
+        <button class="btn btn-outline-primary" id="btnCarSave" type="button">Save</button>
+        <button class="btn btn-outline-primary" id="btnCarUpdate" type="button">Update</button>
+        <button class="btn btn-outline-danger" id="Delete" type="button">Delete</button>
         <button class="btn btn-outline-info" id="btnCarClear" type="button">Clear</button>
     </div>
     <br><br>
 
-    <!-- end driver button section-->
+    <!-- end Car button section-->
 
-    <!--start Driver table section-->
+    <!--start Car table section-->
     <section class="container">
         <table class="table table-primary table-hover table-bordered" id="cartbl">
             <thead>
@@ -806,7 +808,7 @@ end Customer section
                 <th scope="col">Image</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody id="carBodyTbl">
             <tr>
                 <th></th>
                 <td></td>
@@ -826,7 +828,7 @@ end Customer section
     </section>
     <br><br>
 
-    <!--end Driver table section-->
+    <!--end Car table section-->
 </section>
 
 <section class="container" id="booking">
@@ -1175,7 +1177,7 @@ end Customer section
         $.ajax({
             url: baseUrlAdmin + `?id=${id}`, method: "DELETE", success: function (resp) {
                 if (resp.code == 200) {
-                    alert("Are You sure delete Admin ID :"+id);
+                    alert("Are You sure delete Admin ID :" + id);
                     loadAllAdmin();
                     clearAdminForm();
                 } else if (resp.code == 400) {
@@ -1196,12 +1198,12 @@ end Customer section
         }
 
         $.ajax({
-            url : baseUrlAdmin,
-            method : "PUT",
-            contentType:"application/json",
+            url: baseUrlAdmin,
+            method: "PUT",
+            contentType: "application/json",
             data: JSON.stringify(adminOb),
-            success:function (response) {
-                if (response.code ==200) {
+            success: function (response) {
+                if (response.code == 200) {
                     alert("SuccessFully Updated..")
                     loadAllAdmin();
                     clearAdminForm();
@@ -1214,7 +1216,7 @@ end Customer section
 
     });
 
-    function clearAdminForm(){
+    function clearAdminForm() {
         $("#exampleInputID").val("");
         $("#exampleInputName").val("");
         $("#exampleInputAddress").val("");
@@ -1223,11 +1225,11 @@ end Customer section
         $("#txtAdminEmail").val("");
     }
 
-   /* end admin content*/
+    /* end admin content*/
 
- /*   -----------------------------------------------------------------------------------------*/
+    /*   -----------------------------------------------------------------------------------------*/
 
-   /* start driver content*/
+    /* start driver content*/
 
     var baseUrlDriver = "http://localhost:8080/Car_Rental_System_war/api/driver"
 
@@ -1276,7 +1278,7 @@ end Customer section
             method: "GET",
             success: function (response) {
                 for (const dr of response.data) {
-                    let rows =`<tr><td>${dr.Driver_Id}</td><td>${dr.Driver_Name}</td><td>${dr.Driver_Address}</td><td>${dr.Driver_MobileNo}</td><td>${dr.Driver_Password}</td><td>${dr.Driver_Email}</td><td></td></tr>`;
+                    let rows = `<tr><td>${dr.Driver_Id}</td><td>${dr.Driver_Name}</td><td>${dr.Driver_Address}</td><td>${dr.Driver_MobileNo}</td><td>${dr.Driver_Password}</td><td>${dr.Driver_Email}</td><td></td></tr>`;
                     $("#driverBodyTbl").append(rows);
                 }
                 bindClickEventsDriver();
@@ -1321,7 +1323,7 @@ end Customer section
         $.ajax({
             url: baseUrlDriver + `?id=${id}`, method: "DELETE", success: function (resp) {
                 if (resp.code == 200) {
-                    alert("Are You sure delete Driver ID :"+id);
+                    alert("Are You sure delete Driver ID :" + id);
                     loadAllDriver();
                     clearDriverForm();
                 } else if (resp.code == 400) {
@@ -1334,20 +1336,20 @@ end Customer section
     function updateDriver() {
         var DriverOb = {
             ids: $("#exampleInputDriverID").val(),
-            names:  $("#exampleInputDriverName").val(),
+            names: $("#exampleInputDriverName").val(),
             addresss: $("#exampleInputDriverAddress").val(),
-            mobileNums:$("#txtMObileDriverNumber").val(),
+            mobileNums: $("#txtMObileDriverNumber").val(),
             passwords: $("#txtDriverPassword").val(),
-            emails:$("#txtDriverEmail").val()
+            emails: $("#txtDriverEmail").val()
         }
 
         $.ajax({
-            url : baseUrlDriver,
-            method : "PUT",
-            contentType:"application/json",
+            url: baseUrlDriver,
+            method: "PUT",
+            contentType: "application/json",
             data: JSON.stringify(DriverOb),
-            success:function (response) {
-                if (response.code ==200) {
+            success: function (response) {
+                if (response.code == 200) {
                     alert("SuccessFully Updated..")
                     loadAllDriver();
                     clearDriverForm();
@@ -1358,6 +1360,16 @@ end Customer section
             }
         });
     }
+
+/*    end driver section*/
+
+   /* -----------------------------------------------------------------------------------*/
+
+/*    start cars content*/
+
+    $("#btnCarSave").click(function () {
+        saveDriver();
+    });
 
 </script>
 </body>
