@@ -440,7 +440,7 @@
     <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="adminbtn">
         <button class="btn btn-outline-primary" id="btnAdminSave" type="button">Save</button>
         <button class="btn btn-outline-primary" id="btnAdminUpdate" type="button">Update</button>
-        <button class="btn btn-outline-info" id="btnAdminDelete" type="button">Delete</button>
+        <button class="btn btn-outline-danger" id="btnAdminDelete" type="button">Delete</button>
         <button class="btn btn-outline-info" id="btnAdminClear" type="button">Clear</button>
     </div>
     <br><br>
@@ -1126,6 +1126,7 @@ end Customer section
                 if (response.code == 200) {
                     alert("Successfully Admin Registered..");
                     loadAllAdmin();
+                    clearAdminForm();
                 }
             },
             error: function (ob) {
@@ -1182,8 +1183,9 @@ end Customer section
         $.ajax({
             url: baseUrlAdmin + `?id=${id}`, method: "DELETE", success: function (resp) {
                 if (resp.code == 200) {
+                    alert("Are You sure delete Admin ID :"+id);
                     loadAllAdmin();
-
+                    clearAdminForm();
                 } else if (resp.code == 400) {
                     alert(resp.data);
                 }
@@ -1210,6 +1212,7 @@ end Customer section
                 if (response.code ==200) {
                     alert("SuccessFully Updated..")
                     loadAllAdmin();
+                    clearAdminForm();
                 }
             },
             error: function (ob) {
@@ -1218,6 +1221,15 @@ end Customer section
         });
 
     });
+
+    function clearAdminForm(){
+        $("#exampleInputID").val("");
+        $("#exampleInputName").val("");
+        $("#exampleInputAddress").val("");
+        $("#txtMObileNumber").val("");
+        $("#txtPassword").val("");
+        $("#txtAdminEmail").val("");
+    }
 </script>
 </body>
 </html>
