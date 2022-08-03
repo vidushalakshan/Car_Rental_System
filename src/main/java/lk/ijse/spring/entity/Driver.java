@@ -13,10 +13,10 @@ import javax.persistence.Id;
 @Entity
 public class Driver {
     @Id
-    private String Driver_Id;
-    private String Driver_Name;
-    private String Driver_Address;
-    private String Driver_MobileNo;
-    private String Driver_Password;
-    private String Driver_Email;
+    private String driver_Id;
+    private String driver_Name;
+    private String driver_Address;
+    private String driver_MobileNo;
+    private String driver_Password;
+    private String driver_Email;
 }

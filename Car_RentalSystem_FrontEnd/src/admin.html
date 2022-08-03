@@ -492,27 +492,27 @@
                     <label class="form-label" for="exampleInputDriverID" id="btnDriverID">Driver ID :</label>
                     <input aria-describedby="orderId"
                            class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                           id="exampleInputDriverID" name="Driver_Id" type="text">
+                           id="exampleInputDriverID" name="driver_Id" type="text">
                 </div>
 
                 <div class="form-group col-5 d-inline-block m-lg-2">
                     <label class="form-label" for="exampleInputDriverName" id="btnDriverName">Full Name :</label>
                     <input aria-describedby="orderDate"
                            class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                           id="exampleInputDriverName" name="Driver_Name" type="text">
+                           id="exampleInputDriverName" name="driver_Name" type="text">
                 </div>
 
                 <div class="form-group col-5 d-inline-block mx-3">
                     <label class="form-label" for="exampleInputDriverAddress" id="btnDriverAddress">Address :</label>
                     <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                           id="exampleInputDriverAddress" name="Driver_Address" type="text">
+                           id="exampleInputDriverAddress" name="driver_Address" type="text">
                 </div>
 
                 <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
                     <label class="form-label" for="txtMObileDriverNumber" id="btnMobileNumber">Mobile Number :</label>
                     <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
                            id="txtMObileDriverNumber"
-                           name="Driver_MobileNo" type="text">
+                           name="driver_MobileNo" type="text">
                 </div>
 
                 <div class="form-group col-5 d-inline-block mx-3">
@@ -520,13 +520,13 @@
                     <label class="form-label" for="txtDriverPassword">Password :</label>
                     <input aria-describedby="orderId"
                            class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                           id="txtDriverPassword" name="Driver_Password" type="text">
+                           id="txtDriverPassword" name="driver_Password" type="text">
                 </div>
 
                 <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
                     <label class="form-label" for="txtDriverEmail" id="btnDriverEmail">Email :</label>
                     <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="txtDriverEmail"
-                           name="Driver_Email" type="text">
+                           name="driver_Email" type="text">
                 </div>
 
                 <!-- <div class="form-group col-11 d-inline-block mx-lg-3 m-lg-1">
@@ -781,7 +781,7 @@ end Customer section
     <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="carbtn">
         <button class="btn btn-outline-primary" id="btnCarSave" type="button">Save</button>
         <button class="btn btn-outline-primary" id="btnCarUpdate" type="button">Update</button>
-        <button class="btn btn-outline-danger" id="Delete" type="button">Delete</button>
+        <button class="btn btn-outline-danger" id="btnCarDelete" type="button">Delete</button>
         <button class="btn btn-outline-info" id="btnCarClear" type="button">Clear</button>
     </div>
     <br><br>
@@ -1277,7 +1277,7 @@ end Customer section
             method: "GET",
             success: function (response) {
                 for (const dr of response.data) {
-                    let rows = `<tr><td>${dr.Driver_Id}</td><td>${dr.Driver_Name}</td><td>${dr.Driver_Address}</td><td>${dr.Driver_MobileNo}</td><td>${dr.Driver_Password}</td><td>${dr.Driver_Email}</td><td></td></tr>`;
+                    let rows = `<tr><td>${dr.driver_Id}</td><td>${dr.driver_Name}</td><td>${dr.driver_Address}</td><td>${dr.driver_MobileNo}</td><td>${dr.driver_Password}</td><td>${dr.driver_Email}</td><td></td></tr>`;
                     $("#driverBodyTbl").append(rows);
                 }
                 bindClickEventsDriver();
@@ -1376,6 +1376,12 @@ end Customer section
         clearVehicalForm();
     });
 
+    $("#btnCarDelete").click(function () {
+        carDelete();
+    });
+
+    loadAllVehical();
+
     function saveCar() {
         var datass = $("#carForms").serialize();
         $.ajax({
@@ -1415,7 +1421,7 @@ end Customer section
     }
 
     function bindClickEventsVehical() {
-        $("#driverBodyTbl>tr").click(function () {
+        $("#carBodyTbl>tr").click(function () {
             //Get values from the selected row
             let re_Num = $(this).children().eq(0).text();
             let Availability = $(this).children().eq(1).text();
@@ -1456,6 +1462,21 @@ end Customer section
         $("#formMonthly_Rate").val("");
         $("#formPrice_ExtraKM").val("");
         $("#formDamage_Price").val("");
+    }
+
+    function carDelete() {
+        let id = $("#exampleInputCarID").val();
+        $.ajax({
+            url: baseUrlCar + `?id=${id}`, method: "DELETE", success: function (resp) {
+                if (resp.code == 200) {
+                    alert("Are You sure delete Car ID :" + id);
+                    loadAllVehical();
+                    clearVehicalForm();
+                } else if (resp.code == 400) {
+                    alert(resp.data);
+                }
+            }
+        });
     }
 
 </script>
