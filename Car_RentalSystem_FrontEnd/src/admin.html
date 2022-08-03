@@ -1380,6 +1380,10 @@ end Customer section
         carDelete();
     });
 
+    $("#btnCarUpdate").click(function () {
+        carUpdate();
+    });
+
     loadAllVehical();
 
     function saveCar() {
@@ -1477,6 +1481,55 @@ end Customer section
                 }
             }
         });
+    }
+
+    function carUpdate() {
+        var carOb = {
+
+            re_Num:$("#exampleInputCarID").val(),
+            Availability: $("#exampleInputCarAvailable").val(),
+            Brand: $("#exampleInputCarBrand").val(),
+            Type: $("#txtMObileCarType").val(),
+            Color: $("#txtCarColor").val(),
+            Transmission_Type: $("#txtCarTransmission").val(),
+            Passanger: $("#formNo_Of_Passanger").val(),
+            Daily_Rate:  $("#formDaily_Rate").val(),
+            Monthly_Rate: $("#formMonthly_Rate").val(),
+            Price_ExtraKM: $("#formPrice_ExtraKM").val(),
+            Damage_Price: $("#formDamage_Price").val()
+        }
+
+        $.ajax({
+            url: baseUrlCar,
+            method: "PUT",
+            contentType: "application/json",
+            data: JSON.stringify(carOb),
+            success: function (response) {
+                if (response.code == 200) {
+                    alert("SuccessFully Updated..")
+                    loadAllVehical();
+                    clearVehicalForm();
+                }
+            },
+            error: function (ob) {
+                alert(ob.responseJSON.message);
+            }
+        });
+    }
+
+   /* end car section*/
+
+   /* -----------------------------------------------------------------------------------*/
+
+    /*start driverShedule content*/
+
+    /*-----------------------------------------------------------------------------------*/
+
+    var baseUrlShedule = "http://localhost:8080/Car_Rental_System_war/api/driverShedule"
+
+
+    function loadAdminIDS() {
+
     }
 
 </script>

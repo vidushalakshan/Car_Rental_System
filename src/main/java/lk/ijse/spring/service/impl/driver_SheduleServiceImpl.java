@@ -2,16 +2,19 @@ package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.AdminDTO;
 import lk.ijse.spring.dto.Drive_SheduleDTO;
+import lk.ijse.spring.dto.DriversDTO;
 import lk.ijse.spring.entity.Admin;
 import lk.ijse.spring.entity.Driver_Shedule;
 import lk.ijse.spring.repo.Driver_SheduleRepo;
 import lk.ijse.spring.service.DriverService;
 import lk.ijse.spring.service.Driver_SheduleService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Transactional
 @Service
@@ -54,5 +57,12 @@ public class driver_SheduleServiceImpl implements Driver_SheduleService {
     @Override
     public Drive_SheduleDTO searchDriverShedule(String id) {
         return null;
+    }
+
+    @Override
+    public List<Drive_SheduleDTO> getAllShedule() {
+        return modelMapper.map(driver_sheduleRepo.findAll(), new TypeToken<List<Drive_SheduleDTO>>(){
+
+        }.getType());
     }
 }
