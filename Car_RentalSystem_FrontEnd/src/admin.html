@@ -383,48 +383,47 @@
 
     <!--start form section-->
 
-    <form class="col-md-auto">
+    <form class="col-md-auto" id="adminForm">
         <div class="card col-12 mx-1">
             <div class="card-body">
                 <div class="form-group col-5 d-inline-block mx-3">
                     <label class="form-label" for="exampleInputID" id="AdminIDBtn">Admin_ID :</label>
                     <input aria-describedby="orderId"
                            class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                           id="exampleInputID" type="text">
+                           id="exampleInputID" type="text" name="admin_Id">
                 </div>
 
                 <div class="form-group col-5 d-inline-block m-lg-2">
                     <label class="form-label" for="exampleInputName" id="AdminNameBtn">Full Name :</label>
                     <input aria-describedby="orderDate"
                            class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                           id=exampleInputName type="text">
+                           id="exampleInputName" type="text" name="admin_Name">
                 </div>
 
-                <div class="mx-3 mt-2 col-5 d-inline-block">
+                <div class="form-group col-5 d-inline-block mx-3">
                     <label class="form-label" for="exampleInputAddress" id="AdminAddressBtn">Address :</label>
-                    <select class="form-select btn-outline-primary bg-light bg-opacity-50 text-dark"
-                            id="exampleInputAddress" type="text">
-                    </select>
+                    <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                            id="exampleInputAddress" type="text" name="admin_Address">
                 </div>
 
                 <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
                     <label class="form-label" for="txtMObileNumber" id="AdminMobileNumBtn">Mobile Number :</label>
                     <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
                            id="txtMObileNumber"
-                           type="text">
+                           type="text" name="admin_MobileNo">
                 </div>
 
                 <div class="form-group col-5 d-inline-block mx-3">
                     <label class="form-label" for="txtPassword" id="AdminPasswordBtn">Password :</label>
                     <input aria-describedby="orderId"
                            class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                           id="txtPassword" type="text">
+                           id="txtPassword" type="text" name="admin_Password">
                 </div>
 
                 <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
                     <label class="form-label" for="txtAdminEmail" id="AdminEmailBtn">Email :</label>
-                    <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id=txtAdminEmail
-                           type="text">
+                    <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="txtAdminEmail"
+                           type="text" name="admin_Email">
                 </div>
 
                 <!--<div class="form-group col-11 d-inline-block mx-lg-3 m-lg-1">
@@ -456,21 +455,17 @@
                 <th scope="col">Password</th>
                 <th scope="col">Email</th>
                 <th scope="col">Image</th>
-                <th scope="col">Actions</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody id="adminbody">
             <tr>
-                <th>1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <!--<td>@mdo</td>-->
-                <td>
-                    <button class="btn btn-danger badge rounded-pill" style="width: 80px;" type="button">Delete</button>
-                </td>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
             </tbody>
         </table>
@@ -1022,6 +1017,7 @@ end Customer section
             </tbody>
         </table>
     </section>
+</section>
 
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
@@ -1104,7 +1100,72 @@ end Customer section
             $("#payment").css("display", "block");
         });
 
+/*admin section*/
+
+        var baseUrlAdmin= "http://localhost:8080/Car_Rental_System_war/api/admin"
+
+        $("#btnAdminSave").click(function () {
+            saveAdmin();
+        });
+
+        loadAllAdmin();
+
+        function saveAdmin() {
+            var data=$("#adminForm").serialize();
+            $.ajax({
+                url: baseUrlAdmin,
+                method:"POST",
+                data : data,
+                success:function (response) {
+                    if (response.code==200){
+                        alert("Successfully Admin Registered..");
+                        loadAllAdmin();
+                    }
+                },
+                error:function (ob) {
+                    alert(ob.responseJSON.message);
+                }
+            });
+        }
+
+        function loadAllAdmin() {
+            $("#adminbody").empty();
+            $.ajax({
+                url: baseUrlAdmin,
+                method: "GET",
+                success:function (response) {
+                    for (const admin of response.data){
+                        let row =`<tr><td>${admin.admin_Id}</td><td>${admin.admin_Name}</td><td>${admin.admin_Address}</td><td>${admin.admin_MobileNo}</td><td>${admin.admin_Password}</td><td>${admin.admin_Email}</td></tr>`;
+                        $("#adminbody").append(row);
+                    }
+                    bindClickEvents();
+                },
+                error:function (ob) {
+                    alert(ob.responseJSON.message);
+                }
+            });
+        }
+
+        //Bind click events to the table rows
+        function bindClickEvents() {
+            $("#adminbody>tr").click(function () {
+                //Get values from the selected row
+                let id = $(this).children().eq(0).text();
+                let name = $(this).children().eq(1).text();
+                let address = $(this).children().eq(2).text();
+                let mobileNum = $(this).children().eq(3).text();
+                let password = $(this).children().eq(4).text();
+                let email = $(this).children().eq(5).text();
+
+                //Set values to the text-fields
+                $("#exampleInputID").val(id);
+                $("#exampleInputName").val(name);
+                $("#exampleInputAddress").val(address);
+                $("#txtMObileNumber").val(mobileNum);
+                $("#txtPassword").val(password);
+                $("#txtAdminEmail").val(email);
+            });
+        }
     </script>
-    <!--<script src="assets/script/script.js"></script>-->
 </body>
 </html>

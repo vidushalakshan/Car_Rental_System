@@ -52,8 +52,8 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public CustomerDTO searchAdmin(String id) {
-        if (adminRepo.existsAdminById(id)) {
-            return modelMapper.map(adminRepo.existsAdminById(id), new TypeToken<List<AdminDTO>>() {
+        if (adminRepo.existsById(id)) {
+            return modelMapper.map(adminRepo.findById(id), new TypeToken<List<AdminDTO>>() {
             }.getType());
         } else {
             throw new RuntimeException("No Admin For " + id + "..!");

@@ -38,14 +38,14 @@ public class AdminController {
         return new ResponseUtil(200, "Admin Update Successfully", null);
     }
 
-    @DeleteMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil deleteAdmin(@RequestParam String id) {
         adminService.deleteAdmin(id);
         return new ResponseUtil(200, "Admin Delete Successfully", null);
     }
 
     @GetMapping(path = "/search", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseUtil searchAdmin(@RequestParam String search) {
+    public ResponseUtil searchAdmin(@PathVariable String search) {
         return new ResponseUtil(200, "OK", adminService.searchAdmin(search));
     }
 

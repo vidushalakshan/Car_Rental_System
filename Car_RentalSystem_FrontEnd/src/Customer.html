@@ -157,11 +157,11 @@
                        type="text">
             </div>
 
-            <div class="form-group col-11 d-inline-block mx-lg-3 m-lg-1">
+            <!--<div class="form-group col-11 d-inline-block mx-lg-3 m-lg-1">
                 <label class="form-label" for="formFile" id="CustomerImageImg">Customer Image :</label>
                 <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="formFile"
                        type="file">
-            </div>
+            </div>-->
         </form>
     </div>
 </div>
@@ -177,13 +177,13 @@
 
 <div class="col-md-auto">
     <div class="card col-12 mx-1">
-        <form class="card-body" id="customerPayment">
-            <div class="form-group col-5 d-inline-block mx-3">
+        <div class="card-body" id="customerPayment">
+            <form class="form-group col-5 d-inline-block mx-3" id="customerforms">
                 <label class="form-label" for="paymentInputID" id="PaymentIDBtn">Card Number:</label>
                 <input aria-describedby="orderId"
                        class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
                        id="paymentInputID" type="text">
-            </div>
+            </form>
 
             <div class="form-group col-5 d-inline-block m-lg-2">
                 <label class="form-label" for="PaymentInputName" id="paymentNameBtn">Name On Card :</label>
@@ -205,7 +205,7 @@
                        id="paymentexpiredate"
                        type="date">
             </div>
-        </form>
+        </div>
     </div>
 </div>
 <br><br>
@@ -224,6 +224,7 @@
    /* $("#CustomerIDBtn").prop('disabled', true);*/
 
     const baseUrl = "http://localhost:8080/Car_Rental_System_war/api/customer";
+    const baseUrl2 = ""
 
     $("#btnaddCustomer").click(function () {
         saveCustomer();
@@ -237,18 +238,20 @@
     /*
     save customer*/
     function saveCustomer() {
-        var data = $("#customerForm").serialize();
+        var data = $("#customerforms").serialize();
         $.ajax({
             url: baseUrl,
             method: "POST",
             data: data,
             success: function (res) {
+                console.log("hriiiiiiii");
                 if (res.code == 200) {
-                    alert("Successfully Customer Registered..")
+                    alert("Successfully Customer Registered..");
+                    console.log("hellow");
                 }
             },
             error: function (ob) {
-                alert(ob.responeJSON.message);
+                alert("wrong");
             }
         });
     }
