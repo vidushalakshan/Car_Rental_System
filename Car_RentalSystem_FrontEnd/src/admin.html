@@ -390,40 +390,40 @@
                     <label class="form-label" for="exampleInputID" id="AdminIDBtn">Admin_ID :</label>
                     <input aria-describedby="orderId"
                            class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                           id="exampleInputID" type="text" name="admin_Id">
+                           id="exampleInputID" name="admin_Id" type="text">
                 </div>
 
                 <div class="form-group col-5 d-inline-block m-lg-2">
                     <label class="form-label" for="exampleInputName" id="AdminNameBtn">Full Name :</label>
                     <input aria-describedby="orderDate"
                            class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                           id="exampleInputName" type="text" name="admin_Name">
+                           id="exampleInputName" name="admin_Name" type="text">
                 </div>
 
                 <div class="form-group col-5 d-inline-block mx-3">
                     <label class="form-label" for="exampleInputAddress" id="AdminAddressBtn">Address :</label>
                     <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                            id="exampleInputAddress" type="text" name="admin_Address">
+                           id="exampleInputAddress" name="admin_Address" type="text">
                 </div>
 
                 <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
                     <label class="form-label" for="txtMObileNumber" id="AdminMobileNumBtn">Mobile Number :</label>
                     <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
                            id="txtMObileNumber"
-                           type="text" name="admin_MobileNo">
+                           name="admin_MobileNo" type="text">
                 </div>
 
                 <div class="form-group col-5 d-inline-block mx-3">
                     <label class="form-label" for="txtPassword" id="AdminPasswordBtn">Password :</label>
                     <input aria-describedby="orderId"
                            class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                           id="txtPassword" type="text" name="admin_Password">
+                           id="txtPassword" name="admin_Password" type="text">
                 </div>
 
                 <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
                     <label class="form-label" for="txtAdminEmail" id="AdminEmailBtn">Email :</label>
                     <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="txtAdminEmail"
-                           type="text" name="admin_Email">
+                           name="admin_Email" type="text">
                 </div>
 
                 <!--<div class="form-group col-11 d-inline-block mx-lg-3 m-lg-1">
@@ -438,7 +438,9 @@
 
     <!-- end form section-->
     <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="adminbtn">
-        <button class="btn btn-outline-primary" id="btnAdminSave" type="button">Save & Update</button>
+        <button class="btn btn-outline-primary" id="btnAdminSave" type="button">Save</button>
+        <button class="btn btn-outline-primary" id="btnAdminUpdate" type="button">Update</button>
+        <button class="btn btn-outline-info" id="btnAdminDelete" type="button">Delete</button>
         <button class="btn btn-outline-info" id="btnAdminClear" type="button">Clear</button>
     </div>
     <br><br>
@@ -467,7 +469,7 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td>
+                <td id="deleteBtnAdmin">
                     <button class="btn btn-danger badge rounded-pill" style="width: 80px;" type="button">Delete</button>
                 </td>
             </tr>
@@ -1023,9 +1025,18 @@ end Customer section
     </section>
 </section>
 
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
-    <script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+<script>
+    $("#dashboard").css("display", "");
+    $("#admin").css("display", "none");
+    $("#driver").css("display", "none");
+    $("#customer").css("display", "none");
+    $("#car").css("display", "none");
+    $("#booking").css("display", "none");
+    $("#payment").css("display", "none");
+
+    $("#dashboardlink").click(function () {
         $("#dashboard").css("display", "");
         $("#admin").css("display", "none");
         $("#driver").css("display", "none");
@@ -1033,143 +1044,180 @@ end Customer section
         $("#car").css("display", "none");
         $("#booking").css("display", "none");
         $("#payment").css("display", "none");
+    });
 
-        $("#dashboardlink").click(function () {
-            $("#dashboard").css("display", "");
-            $("#admin").css("display", "none");
-            $("#driver").css("display", "none");
-            $("#customer").css("display", "none");
-            $("#car").css("display", "none");
-            $("#booking").css("display", "none");
-            $("#payment").css("display", "none");
-        });
+    $("#adminlink").click(function () {
+        $("#dashboard").css("display", "none");
+        $("#admin").css("display", "block");
+        $("#driver").css("display", "none");
+        $("#customer").css("display", "none");
+        $("#car").css("display", "none");
+        $("#booking").css("display", "none");
+        $("#payment").css("display", "none");
+    });
 
-        $("#adminlink").click(function () {
-            $("#dashboard").css("display", "none");
-            $("#admin").css("display", "block");
-            $("#driver").css("display", "none");
-            $("#customer").css("display", "none");
-            $("#car").css("display", "none");
-            $("#booking").css("display", "none");
-            $("#payment").css("display", "none");
-        });
+    $("#driverlink").click(function () {
+        $("#dashboard").css("display", "none");
+        $("#admin").css("display", "none");
+        $("#driver").css("display", "block");
+        $("#customer").css("display", "none");
+        $("#car").css("display", "none");
+        $("#booking").css("display", "none");
+        $("#payment").css("display", "none");
+    });
 
-        $("#driverlink").click(function () {
-            $("#dashboard").css("display", "none");
-            $("#admin").css("display", "none");
-            $("#driver").css("display", "block");
-            $("#customer").css("display", "none");
-            $("#car").css("display", "none");
-            $("#booking").css("display", "none");
-            $("#payment").css("display", "none");
-        });
+    $("#linkCustomers").click(function () {
+        $("#dashboard").css("display", "none");
+        $("#admin").css("display", "none");
+        $("#driver").css("display", "none");
+        $("#customer").css("display", "block");
+        $("#car").css("display", "none");
+        $("#booking").css("display", "none");
+        $("#payment").css("display", "none");
+    });
 
-        $("#linkCustomers").click(function () {
-            $("#dashboard").css("display", "none");
-            $("#admin").css("display", "none");
-            $("#driver").css("display", "none");
-            $("#customer").css("display", "block");
-            $("#car").css("display", "none");
-            $("#booking").css("display", "none");
-            $("#payment").css("display", "none");
-        });
+    $("#linkCars").click(function () {
+        $("#dashboard").css("display", "none");
+        $("#admin").css("display", "none");
+        $("#driver").css("display", "none");
+        $("#customer").css("display", "none");
+        $("#car").css("display", "block");
+        $("#booking").css("display", "none");
+        $("#payment").css("display", "none");
+    });
 
-        $("#linkCars").click(function () {
-            $("#dashboard").css("display", "none");
-            $("#admin").css("display", "none");
-            $("#driver").css("display", "none");
-            $("#customer").css("display", "none");
-            $("#car").css("display", "block");
-            $("#booking").css("display", "none");
-            $("#payment").css("display", "none");
-        });
+    $("#linkBooking").click(function () {
+        $("#dashboard").css("display", "none");
+        $("#admin").css("display", "none");
+        $("#driver").css("display", "none");
+        $("#customer").css("display", "none");
+        $("#car").css("display", "none");
+        $("#booking").css("display", "block");
+        $("#payment").css("display", "none");
+    });
 
-        $("#linkBooking").click(function () {
-            $("#dashboard").css("display", "none");
-            $("#admin").css("display", "none");
-            $("#driver").css("display", "none");
-            $("#customer").css("display", "none");
-            $("#car").css("display", "none");
-            $("#booking").css("display", "block");
-            $("#payment").css("display", "none");
-        });
+    $("#linkPayment").click(function () {
+        $("#dashboard").css("display", "none");
+        $("#admin").css("display", "none");
+        $("#driver").css("display", "none");
+        $("#customer").css("display", "none");
+        $("#car").css("display", "none");
+        $("#booking").css("display", "none");
+        $("#payment").css("display", "block");
+    });
+    /*---------------------------------------------------------------------------*/
+    /*admin section*/
+    let btns = "<button id='adminDeleteBtn' class='btn btn-danger' style='width:70px; height: 38px' data-bs-target='#updateCustomer' data-bs-toggle='modal'><i class='bi bi-pencil-square'></i>Delete</button>";
+    var baseUrlAdmin = "http://localhost:8080/Car_Rental_System_war/api/admin"
 
-        $("#linkPayment").click(function () {
-            $("#dashboard").css("display", "none");
-            $("#admin").css("display", "none");
-            $("#driver").css("display", "none");
-            $("#customer").css("display", "none");
-            $("#car").css("display", "none");
-            $("#booking").css("display", "none");
-            $("#payment").css("display", "block");
-        });
-/*---------------------------------------------------------------------------*/
-/*admin section*/
-        let btns = "<button id='adminDeleteBtn' class='btn btn-danger' style='width:70px; height: 38px' data-bs-target='#updateCustomer' data-bs-toggle='modal'><i class='bi bi-pencil-square'></i>Delete</button>";
-        var baseUrlAdmin= "http://localhost:8080/Car_Rental_System_war/api/admin"
+    $("#btnAdminSave").click(function () {
+        saveAdmin();
+    });
 
-        $("#btnAdminSave").click(function () {
-            saveAdmin();
-        });
+    loadAllAdmin();
 
-        loadAllAdmin();
-
-        function saveAdmin() {
-            var data=$("#adminForm").serialize();
-            $.ajax({
-                url: baseUrlAdmin,
-                method:"POST",
-                data : data,
-                success:function (response) {
-                    if (response.code==200){
-                        alert("Successfully Admin Registered..");
-                        loadAllAdmin();
-                    }
-                },
-                error:function (ob) {
-                    alert(ob.responseJSON.message);
+    function saveAdmin() {
+        var data = $("#adminForm").serialize();
+        $.ajax({
+            url: baseUrlAdmin,
+            method: "POST",
+            data: data,
+            success: function (response) {
+                if (response.code == 200) {
+                    alert("Successfully Admin Registered..");
+                    loadAllAdmin();
                 }
-            });
-        }
+            },
+            error: function (ob) {
+                alert(ob.responseJSON.message);
+            }
+        });
+    }
 
-        function loadAllAdmin() {
-            $("#adminbody").empty();
-            $.ajax({
-                url: baseUrlAdmin,
-                method: "GET",
-                success:function (response) {
-                    for (const admin of response.data){
-                        let row =`<tr><td>${admin.admin_Id}</td><td>${admin.admin_Name}</td><td>${admin.admin_Address}</td><td>${admin.admin_MobileNo}</td><td>${admin.admin_Password}</td><td>${admin.admin_Email}</td><td></td><td style="text-align: center">${btns}</td></tr>`;
-                        $("#adminbody").append(row);
-                    }
-                    bindClickEventsAdmin();
-                },
-                error:function (ob) {
-                    alert(ob.responseJSON.message);
+    function loadAllAdmin() {
+        $("#adminbody").empty();
+        $.ajax({
+            url: baseUrlAdmin,
+            method: "GET",
+            success: function (response) {
+                for (const admin of response.data) {
+                    let row = `<tr><td>${admin.admin_Id}</td><td>${admin.admin_Name}</td><td>${admin.admin_Address}</td><td>${admin.admin_MobileNo}</td><td>${admin.admin_Password}</td><td>${admin.admin_Email}</td><td></td><td style="text-align: center">${btns}</td></tr>`;
+                    $("#adminbody").append(row);
                 }
-            });
+                bindClickEventsAdmin();
+            },
+            error: function (ob) {
+                alert(ob.responseJSON.message);
+            }
+        });
+    }
+
+    //Bind click events to the table rows
+    function bindClickEventsAdmin() {
+        $("#adminbody>tr").click(function () {
+            //Get values from the selected row
+            let id = $(this).children().eq(0).text();
+            let name = $(this).children().eq(1).text();
+            let address = $(this).children().eq(2).text();
+            let mobileNum = $(this).children().eq(3).text();
+            let password = $(this).children().eq(4).text();
+            let email = $(this).children().eq(5).text();
+
+            //Set values to the text-fields
+            $("#exampleInputID").val(id);
+            $("#exampleInputName").val(name);
+            $("#exampleInputAddress").val(address);
+            $("#txtMObileNumber").val(mobileNum);
+            $("#txtPassword").val(password);
+            $("#txtAdminEmail").val(email);
+        });
+    }
+
+    $("#btnAdminDelete").click(function () {
+        deleteAdmin();
+    });
+
+    function deleteAdmin() {
+        let id = $("#exampleInputID").val();
+        $.ajax({
+            url: baseUrlAdmin + `?id=${id}`, method: "DELETE", success: function (resp) {
+                if (resp.code == 200) {
+                    loadAllAdmin();
+
+                } else if (resp.code == 400) {
+                    alert(resp.data);
+                }
+            }
+        });
+    }
+
+    $("#btnAdminUpdate").click(function () {
+        var adminOb = {
+            ids: $("#exampleInputID").val(),
+            names: $("#exampleInputName").val(),
+            addresss: $("#exampleInputAddress").val(),
+            mobileNums: $("#txtMObileNumber").val(),
+            passwords: $("#txtPassword").val(),
+            emails: $("#txtAdminEmail").val()
         }
 
-        //Bind click events to the table rows
-        function bindClickEventsAdmin() {
-            $("#adminbody>tr").click(function () {
-                //Get values from the selected row
-                let id = $(this).children().eq(0).text();
-                let name = $(this).children().eq(1).text();
-                let address = $(this).children().eq(2).text();
-                let mobileNum = $(this).children().eq(3).text();
-                let password = $(this).children().eq(4).text();
-                let email = $(this).children().eq(5).text();
+        $.ajax({
+            url : baseUrlAdmin,
+            method : "PUT",
+            contentType:"application/json",
+            data: JSON.stringify(adminOb),
+            success:function (response) {
+                if (response.code ==200) {
+                    alert("SuccessFully Updated..")
+                    loadAllAdmin();
+                }
+            },
+            error: function (ob) {
+                alert(ob.responseJSON.message);
+            }
+        });
 
-                //Set values to the text-fields
-                $("#exampleInputID").val(id);
-                $("#exampleInputName").val(name);
-                $("#exampleInputAddress").val(address);
-                $("#txtMObileNumber").val(mobileNum);
-                $("#txtPassword").val(password);
-                $("#txtAdminEmail").val(email);
-            });
-        }
-    </script>
+    });
+</script>
 </body>
 </html>
