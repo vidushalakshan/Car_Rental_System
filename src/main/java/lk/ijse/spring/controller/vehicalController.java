@@ -1,6 +1,5 @@
 package lk.ijse.spring.controller;
 
-import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.dto.VehicalDTO;
 import lk.ijse.spring.service.VehicalService;
 import lk.ijse.spring.util.ResponseUtil;

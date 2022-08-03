@@ -690,34 +690,33 @@ end Customer section
 
     <!--start Car section-->
 
-    <form class="col-md-auto" id="driverForm">
+    <form class="col-md-auto" id="carForms">
         <div class="card col-12 mx-1">
             <div class="card-body">
                 <div class="form-group col-5 d-inline-block mx-3">
                     <label class="form-label" for="exampleInputCarID">Register_Number :</label>
                     <input aria-describedby="orderId"
                            class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                           id="exampleInputCarID" type="text">
+                           id="exampleInputCarID" name="re_Num" type="text">
                 </div>
 
                 <div class="form-group col-5 d-inline-block m-lg-2">
                     <label class="form-label" for="exampleInputCarAvailable">Car_Availability :</label>
                     <input aria-describedby="orderDate"
                            class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                           id=exampleInputCarAvailable type="text">
+                           id="exampleInputCarAvailable" name="car_Availability" type="text">
                 </div>
 
-                <div class="mx-3 mt-2 col-5 d-inline-block">
+                <div class="form-group col-5 d-inline-block mx-3">
                     <label class="form-label" for="exampleInputCarBrand">Car_Brand :</label>
-                    <select class="form-select btn-outline-primary bg-light bg-opacity-50 text-dark"
-                            id="exampleInputCarBrand" type="text">
-                    </select>
+                    <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                            id="exampleInputCarBrand" name="car_Brand" type="text">
                 </div>
 
                 <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
                     <label class="form-label" for="txtMObileCarType">Car_Type :</label>
                     <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                           id="txtMObileCarType"
+                           id="txtMObileCarType" name="car_Type"
                            type="text">
                 </div>
 
@@ -725,50 +724,50 @@ end Customer section
                     <label class="form-label" for="txtCarColor">Car_Color :</label>
                     <input aria-describedby="orderId"
                            class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                           id="txtCarColor" type="text">
+                           id="txtCarColor" name="color" type="text">
                 </div>
 
                 <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
                     <label class="form-label" for="txtCarTransmission">Transmission Type :</label>
                     <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                           id="txtCarTransmission"
+                           id="txtCarTransmission" name="Transmission_Type"
                            type="text">
                 </div>
 
                 <div class="form-group col-5 d-inline-block mx-3">
                     <label class="form-label" for="formNo_Of_Passanger">No_Of_Passanger</label>
                     <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                           id="formNo_Of_Passanger"
+                           id="formNo_Of_Passanger" name="no_Of_Passenger"
                            type="text">
                 </div>
                 <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
                     <label class="form-label" for="formDaily_Rate">Daily_Rate</label>
                     <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="formDaily_Rate"
-                           type="text">
+                           name="daily_Rate" type="text">
                 </div>
                 <div class="form-group col-5 d-inline-block mx-3">
                     <label class="form-label" for="formMonthly_Rate">Monthly_Rate</label>
                     <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                           id="formMonthly_Rate"
+                           id="formMonthly_Rate" name="monthly_Rate"
                            type="text">
                 </div>
                 <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
                     <label class="form-label" for="formPrice_ExtraKM">Price_ExtraKM</label>
                     <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                           id="formPrice_ExtraKM"
+                           id="formPrice_ExtraKM" name="price_ExtraKM"
                            type="text">
                 </div>
                 <div class="form-group col-5 d-inline-block mx-3">
                     <label class="form-label" for="formDamage_Price">Damage_Price</label>
                     <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                           id="formDamage_Price"
+                           id="formDamage_Price" name="damage_Price"
                            type="text">
                 </div>
-                <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
+               <!-- <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
                     <label class="form-label" for="formImage">Image</label>
                     <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="formImage"
                            type="file">
-                </div>
+                </div>-->
             </div>
         </div>
     </form>
@@ -1253,11 +1252,11 @@ end Customer section
     loadAllDriver();
 
     function saveDriver() {
-        var data = $("#driverForms").serialize();
+        var datas = $("#driverForms").serialize();
         $.ajax({
             url: baseUrlDriver,
             method: "POST",
-            data: data,
+            data: datas,
             success: function (response) {
                 if (response.code == 200) {
                     alert("Successfully Driver Registered..");
@@ -1367,9 +1366,97 @@ end Customer section
 
 /*    start cars content*/
 
+    var baseUrlCar ="http://localhost:8080/Car_Rental_System_war/api/vehical"
+
     $("#btnCarSave").click(function () {
-        saveDriver();
+        saveCar();
     });
+
+    $("#btnCarClear").click(function () {
+        clearVehicalForm();
+    });
+
+    function saveCar() {
+        var datass = $("#carForms").serialize();
+        $.ajax({
+            url: baseUrlCar,
+            method: "POST",
+            data: datass,
+            success: function (response) {
+                if (response.code == 200) {
+                    alert("Successfully Car Registered..");
+                    loadAllVehical();
+                    clearVehicalForm();
+                }
+            },
+            error: function (ob) {
+                alert(ob.responseJSON.message);
+            }
+        });
+    }
+
+    function loadAllVehical() {
+        $("#carBodyTbl").empty();
+        $.ajax({
+            url: baseUrlCar,
+            method: "GET",
+            success: function (response) {
+                for (const vehical of response.data) {
+                    let row = `<tr><td>${vehical.re_Num}</td><td>${vehical.car_Availability}</td><td>${vehical.car_Brand}</td><td>${vehical.car_Type}</td><td>${vehical.color}</td><td>${vehical.Transmission_Type}</td>
+                                <td>${vehical.no_Of_Passenger}</td><td>${vehical.daily_Rate}</td><td>${vehical.monthly_Rate}</td><td>${vehical.price_ExtraKM}</td><td>${vehical.damage_Price}</td><td></td></tr>`;
+                    $("#carBodyTbl").append(row);
+                }
+                bindClickEventsVehical();
+            },
+            error: function (ob) {
+                alert(ob.responseJSON.message);
+            }
+        });
+    }
+
+    function bindClickEventsVehical() {
+        $("#driverBodyTbl>tr").click(function () {
+            //Get values from the selected row
+            let re_Num = $(this).children().eq(0).text();
+            let Availability = $(this).children().eq(1).text();
+            let Brand = $(this).children().eq(2).text();
+            let Type = $(this).children().eq(3).text();
+            let Color = $(this).children().eq(4).text();
+            let Transmission_Type = $(this).children().eq(5).text();
+            let Passanger = $(this).children().eq(5).text();
+            let Daily_Rate = $(this).children().eq(5).text();
+            let Monthly_Rate = $(this).children().eq(5).text();
+            let Price_ExtraKM = $(this).children().eq(5).text();
+            let Damage_Price = $(this).children().eq(5).text();
+
+            //Set values to the text-fields
+            $("#exampleInputCarID").val(re_Num);
+            $("#exampleInputCarAvailable").val(Availability);
+            $("#exampleInputCarBrand").val(Brand);
+            $("#txtMObileCarType").val(Type);
+            $("#txtCarColor").val(Color);
+            $("#txtCarTransmission").val(Transmission_Type);
+            $("#formNo_Of_Passanger").val(Passanger);
+            $("#formDaily_Rate").val(Daily_Rate);
+            $("#formMonthly_Rate").val(Monthly_Rate);
+            $("#formPrice_ExtraKM").val(Price_ExtraKM);
+            $("#formDamage_Price").val(Damage_Price);
+        });
+    }
+
+    function clearVehicalForm() {
+        $("#exampleInputCarID").val("");
+        $("#exampleInputCarAvailable").val("");
+        $("#exampleInputCarBrand").val("");
+        $("#txtMObileCarType").val("");
+        $("#txtCarColor").val("");
+        $("#txtCarTransmission").val("");
+        $("#formNo_Of_Passanger").val("");
+        $("#formDaily_Rate").val("");
+        $("#formMonthly_Rate").val("");
+        $("#formPrice_ExtraKM").val("");
+        $("#formDamage_Price").val("");
+    }
 
 </script>
 </body>
