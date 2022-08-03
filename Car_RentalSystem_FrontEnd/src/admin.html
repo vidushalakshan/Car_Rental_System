@@ -457,7 +457,6 @@
                 <th scope="col">Password</th>
                 <th scope="col">Email</th>
                 <th scope="col">Image</th>
-                <th scope="col">Action</th>
             </tr>
             </thead>
             <tbody id="adminbody">
@@ -469,9 +468,6 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td id="deleteBtnAdmin">
-                    <button class="btn btn-danger badge rounded-pill" style="width: 80px;" type="button">Delete</button>
-                </td>
             </tr>
             </tbody>
         </table>
@@ -551,6 +547,8 @@
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="driverbtn">
         <button class="btn btn-outline-primary" id="btnDriverSave" type="button">Save & Update</button>
+        <button class="btn btn-outline-primary" id="btnDriverUpdate" type="button">Update</button>
+        <button class="btn btn-outline-danger" id="btnDriverDelete" type="button">Delete</button>
         <button class="btn btn-outline-info" id="btnDriverClear" type="button">Clear</button>
     </div>
     <br><br>
@@ -1107,11 +1105,14 @@ end Customer section
     });
     /*---------------------------------------------------------------------------*/
     /*admin section*/
-    let btns = "<button id='adminDeleteBtn' class='btn btn-danger' style='width:70px; height: 38px' data-bs-target='#updateCustomer' data-bs-toggle='modal'><i class='bi bi-pencil-square'></i>Delete</button>";
     var baseUrlAdmin = "http://localhost:8080/Car_Rental_System_war/api/admin"
 
     $("#btnAdminSave").click(function () {
         saveAdmin();
+    });
+
+    $("#btnAdminClear").click(function () {
+        clearAdminForm();
     });
 
     loadAllAdmin();
@@ -1142,7 +1143,7 @@ end Customer section
             method: "GET",
             success: function (response) {
                 for (const admin of response.data) {
-                    let row = `<tr><td>${admin.admin_Id}</td><td>${admin.admin_Name}</td><td>${admin.admin_Address}</td><td>${admin.admin_MobileNo}</td><td>${admin.admin_Password}</td><td>${admin.admin_Email}</td><td></td><td style="text-align: center">${btns}</td></tr>`;
+                    let row = `<tr><td>${admin.admin_Id}</td><td>${admin.admin_Name}</td><td>${admin.admin_Address}</td><td>${admin.admin_MobileNo}</td><td>${admin.admin_Password}</td><td>${admin.admin_Email}</td><td></td></tr>`;
                     $("#adminbody").append(row);
                 }
                 bindClickEventsAdmin();
@@ -1230,6 +1231,14 @@ end Customer section
         $("#txtPassword").val("");
         $("#txtAdminEmail").val("");
     }
+
+   /* end admin content*/
+
+ /*   -----------------------------------------------------------------------------------------*/
+
+   /* start driver content*/
+
+
 </script>
 </body>
 </html>
