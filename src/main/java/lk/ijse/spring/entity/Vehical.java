@@ -18,7 +18,7 @@ public class Vehical {
     private String car_Brand;
     private String car_Type;
     private String car_Color;
-    private double Transmission_Type;
+    private double transmission_Type;
     private int no_Of_Passenger;
     private String daily_Rate;
     private String monthly_Rate;

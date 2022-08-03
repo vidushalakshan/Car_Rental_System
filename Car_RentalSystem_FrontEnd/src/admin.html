@@ -724,13 +724,13 @@ end Customer section
                     <label class="form-label" for="txtCarColor">Car_Color :</label>
                     <input aria-describedby="orderId"
                            class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                           id="txtCarColor" name="color" type="text">
+                           id="txtCarColor" name="car_Color" type="text">
                 </div>
 
                 <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
                     <label class="form-label" for="txtCarTransmission">Transmission Type :</label>
                     <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                           id="txtCarTransmission" name="Transmission_Type"
+                           id="txtCarTransmission" name="transmission_Type"
                            type="text">
                 </div>
 
@@ -1402,7 +1402,7 @@ end Customer section
             method: "GET",
             success: function (response) {
                 for (const vehical of response.data) {
-                    let row = `<tr><td>${vehical.re_Num}</td><td>${vehical.car_Availability}</td><td>${vehical.car_Brand}</td><td>${vehical.car_Type}</td><td>${vehical.color}</td><td>${vehical.Transmission_Type}</td>
+                    let row = `<tr><td>${vehical.re_Num}</td><td>${vehical.car_Availability}</td><td>${vehical.car_Brand}</td><td>${vehical.car_Type}</td><td>${vehical.car_Color}</td><td>${vehical.transmission_Type}</td>
                                 <td>${vehical.no_Of_Passenger}</td><td>${vehical.daily_Rate}</td><td>${vehical.monthly_Rate}</td><td>${vehical.price_ExtraKM}</td><td>${vehical.damage_Price}</td><td></td></tr>`;
                     $("#carBodyTbl").append(row);
                 }
