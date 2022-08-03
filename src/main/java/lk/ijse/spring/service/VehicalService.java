@@ -15,7 +15,5 @@ public interface VehicalService {
 
     VehicalDTO searchVehical(String id);
 
-    String generateCustomerId();
-
-    List<VehicalDTO> getAllCustomers();
+    List<VehicalDTO> getAllVehical();
 }

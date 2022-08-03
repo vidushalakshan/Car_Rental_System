@@ -61,13 +61,9 @@ public class VehicalServiceImpl  implements VehicalService {
         }
     }
 
-    @Override
-    public String generateCustomerId() {
-        return null;
-    }
 
     @Override
-    public List<VehicalDTO> getAllCustomers() {
+    public List<VehicalDTO> getAllVehical() {
         return modelMappers.map(vehicalRepo.findAll(), new TypeToken<List<VehicalDTO>>(){
 
         }.getType());
