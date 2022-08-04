@@ -264,6 +264,11 @@
             left: 15%;
         }
 
+        #Shedulebtn{
+            position: relative;
+            right: 6%;
+        }
+
     </style>
 </head>
 <body>
@@ -587,40 +592,47 @@
     <h1 id="sheduleTxt" style="text-align: center; color: #6a1a21; font-weight: bold; font-family: Arial;">Drivers
         Shedule</h1>
 
-    <section class="container" id="driverShedule">
-        <form class="col-md-auto">
+    <section class="container">
+        <form class="col-md-auto" id="shduleForm">
             <div class="card col-12 mx-1">
                 <div class="card-body">
                     <div class="form-group col-5 d-inline-block mx-3">
-                        <label class="form-label">Driver ID :</label>
-                        <select aria-label="Default select example" class="form-select">
-                            <option selected>Select Booking :</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                        </select>
+                        <label class="form-label" for="DriverIDe">Driver ID :</label>
+                        <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                               id="DriverIDe" name="driver_id"
+                               type="text">
                     </div>
                     <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
                         <label class="form-label" for="Driver Name">Driver Name :</label>
                         <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                               id="Driver Name"
+                               id="Driver Name" name="driver_name"
                                type="text">
                     </div>
                     <div class="mx-3 mt-2 col-5 d-inline-block">
                         <label class="form-label" for="driverDate">Date :</label>
                         <input aria-describedby="orderDate"
                                class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                               id="driverDate" type="date">
+                               id="driverDate" name="driver_date" type="text">
                     </div>
                     <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
                         <label class="form-label" for="driverTime">Time :</label>
                         <input aria-describedby="orderDate"
                                class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                               id="driverTime" type="date">
+                               id="driverTime" name="driver_time" type="text">
                     </div>
                 </div>
             </div>
         </form>
+        <br><br>
+
+        <!-- start Car button section-->
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="Shedulebtn">
+            <button class="btn btn-outline-primary" id="btnSheduleSave" type="button">Save</button>
+            <button class="btn btn-outline-primary" id="btnSheduleUpdate" type="button">Update</button>
+            <button class="btn btn-outline-danger" id="btnSheduleDelete" type="button">Delete</button>
+            <button class="btn btn-outline-info" id="btnSheduleClear" type="button">Clear</button>
+        </div>
         <br><br>
         <table class="table table-primary table-hover table-bordered" id="driverSheduletbl">
             <thead>
@@ -629,18 +641,14 @@
                 <th scope="col">Driver_Name</th>
                 <th scope="col">Date</th>
                 <th scope="col">Time</th>
-                <th scope="col">Actions</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody id="driversSheduleTblBody">
             <tr>
-                <th>1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>
-                    <button class="btn btn-danger badge rounded-pill" style="width: 80px;" type="button">Delete</button>
-                </td>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
             </tr>
             </tbody>
         </table>
@@ -660,22 +668,16 @@
             <th scope="col">Address</th>
             <th scope="col">Mobile_Number</th>
             <th scope="col">Email</th>
-            <th scope="col">Image</th>
-            <th scope="col">Actions</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="customerBodytbl">
         <tr>
-            <th>1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>@mdo</td>
-            <td>
-                <button class="btn btn-danger badge rounded-pill" style="width: 80px;" type="button">Delete</button>
-            </td>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
         </tr>
         </tbody>
     </table>
@@ -1261,6 +1263,7 @@ end Customer section
                 if (response.code == 200) {
                     alert("Successfully Driver Registered..");
                     loadAllDriver();
+                    loadAdminIDS();
                     clearDriverForm();
                 }
             },
@@ -1528,9 +1531,90 @@ end Customer section
     var baseUrlShedule = "http://localhost:8080/Car_Rental_System_war/api/driverShedule"
 
 
-    function loadAdminIDS() {
+   /* function loadAdminIDS() {
+        $("#driverIdCmb").empty();
 
+        let driverHint= `<option disabled selected>Select Driver ID</option>`;
+        $("#driverIdCmb").append(driverHint);
+
+        $.ajax({
+            url : baseUrlShedule + "/loadDriverIds", method: "GET", success : function (response) {
+                if (response.code==200){
+                    for (const driver of response.data){
+                        let option = `<option value="${driver}">${driver}</option>`;
+                        $("#driverIdCmb").append(option);
+                    }
+                }else {
+                    alert(response.data);
+                }
+            }
+        });
+    }*/
+    $("#btnSheduleSave").click(function () {
+        saveShedule();
+    });
+
+    $("#btnSheduleClear").click(function () {
+        clearSheduleForm();
+    });
+
+   /* $("#btnCarDelete").click(function () {
+        carDelete();
+    });
+
+    $("#btnCarUpdate").click(function () {
+        carUpdate();
+    });*/
+
+    loadAllShedule();
+
+    function saveShedule() {
+        var datas = $("#shduleForm").serialize();
+        $.ajax({
+            url: baseUrlShedule,
+            method: "POST",
+            data: datas,
+            success: function (response) {
+                if (response.code == 200) {
+                    alert("Successfully Driver Shedule Registered..");
+                    loadAllShedule();
+                    clearSheduleForm();
+                }
+            },
+            error: function (ob) {
+                alert(ob.responseJSON.message);
+            }
+        });
     }
+
+    function loadAllShedule() {
+        $("#driversSheduleTblBody").empty();
+        $.ajax({
+            url: baseUrlShedule,
+            method: "GET",
+            success: function (response) {
+                for (const shedule of response.data) {
+                    let row = `<tr><td>${shedule.driver_id}</td><td>${shedule.driver_name}</td><td>${shedule.driver_date}</td><td>${shedule.driver_time}</td></tr>`;
+                    $("#driversSheduleTblBody").append(row);
+                }
+                bindClickEventsVehical();
+            },
+            error: function (ob) {
+                alert(ob.responseJSON.message);
+            }
+        });
+    }
+
+    function clearSheduleForm() {
+        $("#DriverIDe").val("");
+        $("#Driver Name").val("");
+        $("#driverDate").val("");
+        $("#driverTime").val("");
+    }
+/*------------------------------------------------------------------*/
+
+
+
 
 </script>
 </body>

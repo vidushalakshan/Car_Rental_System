@@ -29,7 +29,7 @@ public class driver_SheduleServiceImpl implements Driver_SheduleService {
 
     @Override
     public void saveDriverShedule(Drive_SheduleDTO drive_sheduleDTO) {
-        if (!driver_sheduleRepo.existsById(drive_sheduleDTO.getDriver_Id())){
+        if (!driver_sheduleRepo.existsById(drive_sheduleDTO.getDriver_id())){
             driver_sheduleRepo.save(modelMapper.map(drive_sheduleDTO, Driver_Shedule.class));
         }else {
             throw new RuntimeException("Driver Shedule Already Exist");
@@ -47,7 +47,7 @@ public class driver_SheduleServiceImpl implements Driver_SheduleService {
 
     @Override
     public void updateDriverShedule(Drive_SheduleDTO drive_sheduleDTO) {
-        if (driver_sheduleRepo.existsById(drive_sheduleDTO.getDriver_Id())){
+        if (driver_sheduleRepo.existsById(drive_sheduleDTO.getDriver_id())){
             driver_sheduleRepo.save(modelMapper.map(drive_sheduleDTO,Driver_Shedule.class));
         }else {
             throw new RuntimeException("Please check the Driver ID... No Such Driver to Update..!");

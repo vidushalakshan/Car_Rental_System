@@ -6,8 +6,6 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import java.sql.Time;
-import java.util.Date;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -15,8 +13,8 @@ import java.util.Date;
 @Entity
 public class Driver_Shedule {
     @Id
-    private String driver_Id;
-    private String driver_Name;
-    private Date date;
-    private Time time;
+    private String driver_id;
+    private String driver_name;
+    private String driver_date;
+    private String driver_time;
 }

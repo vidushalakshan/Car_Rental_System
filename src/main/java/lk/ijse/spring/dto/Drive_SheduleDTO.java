@@ -13,8 +13,8 @@ import java.util.Date;
 @Data
 @ToString
 public class Drive_SheduleDTO {
-    private String driver_Id;
-    private String driver_Name;
-    private Date date;
-    private Time time;
+    private String driver_id;
+    private String driver_name;
+    private Date driver_date;
+    private Time driver_time;
 }

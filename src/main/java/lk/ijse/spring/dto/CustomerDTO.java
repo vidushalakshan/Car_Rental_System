@@ -13,7 +13,8 @@ import lombok.ToString;
 public class CustomerDTO {
     private String cus_ID;
     private String name;
+    private String nic_no;
     private String address;
-    private String mobile_No;
-    private String driving_Licens;
+    private String mobile_num;
+    private String email;
 }
