@@ -30,6 +30,40 @@
             box-shadow: 0 10px 30px -12px rgb(0 0 0 / 42%), 0 4px 25px 0px rgb(0 0 0 / 12%), 0 8px 10px -5px rgb(0 0 0 / 20%);
         }
 
+        .mx-1 {
+            margin-right: 0.25rem!important;
+            margin-left: 11.25rem!important;
+        }
+
+        #admin > form > div {
+            width: 82%;
+            position: relative;
+            left: 7%!important;
+        }
+
+        #driver > form > div {
+            position: relative;
+            left: 6%!important;
+        }
+
+        #booking > form > div {
+            width: 82%;
+            position: relative;
+            left: 5%!important;
+        }
+
+        #payment > form > div {
+            width: 82%;
+            position: relative;
+            left: 7%!important;
+        }
+
+        #car > form > div {
+            width: 82%;
+            position: relative;
+            left: 7% !important;
+        }
+
         #titleImg {
             border-radius: 36px;
             height: 37px;
@@ -315,9 +349,8 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid" id="topnaw">
                 <h1 id="txtnav">Administrator</h1>
-                <img alt="" id="navimage" src="assets/image/logout.png">
             </div>
-        </nav>
+        </nav>3
     </div>
 </div>
 
@@ -521,15 +554,14 @@
                 </div>
 
                 <div class="form-group col-5 d-inline-block mx-3">
-                    <label class="form-label" for="txtPassword" id="btnDriverPassword">Password :</label>
-                    <label class="form-label" for="txtDriverPassword">Password :</label>
+                    <label class="form-label" for="txtPassword" id="btnDriverPassword">Time :</label>
                     <input aria-describedby="orderId"
                            class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
                            id="txtDriverPassword" name="driver_Password" type="text">
                 </div>
 
                 <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
-                    <label class="form-label" for="txtDriverEmail" id="btnDriverEmail">Email :</label>
+                    <label class="form-label" for="txtDriverEmail" id="btnDriverEmail">Date :</label>
                     <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="txtDriverEmail"
                            name="driver_Email" type="text">
                 </div>
@@ -568,8 +600,8 @@
                 <th scope="col">Name</th>
                 <th scope="col">Address</th>
                 <th scope="col">MobileNumber</th>
-                <th scope="col">Password</th>
-                <th scope="col">Email</th>
+                <th scope="col">Time</th>
+                <th scope="col">Date</th>
                 <th scope="col">Image</th>
             </tr>
             </thead>
@@ -589,70 +621,6 @@
     <br><br>
 
     <!--end Driver table section-->
-    <h1 id="sheduleTxt" style="text-align: center; color: #6a1a21; font-weight: bold; font-family: Arial;">Drivers
-        Shedule</h1>
-
-    <section class="container">
-        <form class="col-md-auto" id="shduleForm">
-            <div class="card col-12 mx-1">
-                <div class="card-body">
-                    <div class="form-group col-5 d-inline-block mx-3">
-                        <label class="form-label" for="DriverIDe">Driver ID :</label>
-                        <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                               id="DriverIDe" name="driver_id"
-                               type="text">
-                    </div>
-                    <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
-                        <label class="form-label" for="Driver Name">Driver Name :</label>
-                        <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                               id="Driver Name" name="driver_name"
-                               type="text">
-                    </div>
-                    <div class="mx-3 mt-2 col-5 d-inline-block">
-                        <label class="form-label" for="driverDate">Date :</label>
-                        <input aria-describedby="orderDate"
-                               class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                               id="driverDate" name="driver_date" type="text">
-                    </div>
-                    <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
-                        <label class="form-label" for="driverTime">Time :</label>
-                        <input aria-describedby="orderDate"
-                               class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                               id="driverTime" name="driver_time" type="text">
-                    </div>
-                </div>
-            </div>
-        </form>
-        <br><br>
-
-        <!-- start Car button section-->
-
-        <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="Shedulebtn">
-            <button class="btn btn-outline-primary" id="btnSheduleSave" type="button">Save</button>
-            <button class="btn btn-outline-primary" id="btnSheduleUpdate" type="button">Update</button>
-            <button class="btn btn-outline-danger" id="btnSheduleDelete" type="button">Delete</button>
-            <button class="btn btn-outline-info" id="btnSheduleClear" type="button">Clear</button>
-        </div>
-        <br><br>
-        <table class="table table-primary table-hover table-bordered" id="driverSheduletbl">
-            <thead>
-            <tr>
-                <th scope="col">Driver_ID</th>
-                <th scope="col">Driver_Name</th>
-                <th scope="col">Date</th>
-                <th scope="col">Time</th>
-            </tr>
-            </thead>
-            <tbody id="driversSheduleTblBody">
-            <tr>
-                <th></th>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            </tbody>
-        </table>
-    </section>
 </section>
 
 <!--start Customers section-->
@@ -1528,7 +1496,7 @@ end Customer section
 
     /*-----------------------------------------------------------------------------------*/
 
-    var baseUrlShedule = "http://localhost:8080/Car_Rental_System_war/api/driverShedule"
+    var baseUrlShedule = "http://localhost:8080/Car_Rental_System_war/api/shedule"
 
 
    /* function loadAdminIDS() {

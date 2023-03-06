@@ -1,12 +1,8 @@
 package lk.ijse.spring.service.impl;
 
-import lk.ijse.spring.dto.AdminDTO;
 import lk.ijse.spring.dto.Drive_SheduleDTO;
-import lk.ijse.spring.dto.DriversDTO;
-import lk.ijse.spring.entity.Admin;
 import lk.ijse.spring.entity.Driver_Shedule;
 import lk.ijse.spring.repo.Driver_SheduleRepo;
-import lk.ijse.spring.service.DriverService;
 import lk.ijse.spring.service.Driver_SheduleService;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;

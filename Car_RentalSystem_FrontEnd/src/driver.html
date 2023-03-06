@@ -71,19 +71,75 @@
         <tr>
             <th scope="col">Driver_ID</th>
             <th scope="col">Name</th>
-            <th scope="col">Date</th>
+            <th scope="col">Address</th>
+            <th scope="col">MobileNumber</th>
             <th scope="col">Time</th>
+            <th scope="col">Date</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="driverTbl">
         <tr>
-            <th>1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <th></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
         </tr>
         </tbody>
     </table>
 </section>
+
+
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/jQuery/jquery-3.6.0.min.js"></script>
+
+<script>
+
+    var baseUrlDriver = "http://localhost:8080/Car_Rental_System_war/api/driver"
+
+    loadAllDriver();
+
+    function loadAllDriver() {
+        $("#driverTbl").empty();
+        $.ajax({
+            url: baseUrlDriver,
+            method: "GET",
+            success: function (response) {
+                for (const dr of response.data) {
+                    let rows = `<tr><td>${dr.driver_Id}</td><td>${dr.driver_Name}</td><td>${dr.driver_Address}</td><td>${dr.driver_MobileNo}</td><td>${dr.driver_Password}</td><td>${dr.driver_Email}</td><td></td></tr>`;
+                    $("#driverTbl").append(rows);
+                }
+                bindClickEventsDriver();
+            },
+            error: function (ob) {
+                alert(ob.responseJSON.message);
+            }
+        });
+    }
+
+    function bindClickEventsDriver() {
+        $("#dr>tr").click(function () {
+            //Get values from the selected row
+            let id = $(this).children().eq(0).text();
+            let name = $(this).children().eq(1).text();
+            let address = $(this).children().eq(2).text();
+            let mobileNum = $(this).children().eq(3).text();
+            let password = $(this).children().eq(4).text();
+            let email = $(this).children().eq(5).text();
+
+            //Set values to the text-fields
+            $("#exampleInputDriverID").val(id);
+            $("#exampleInputDriverName").val(name);
+            $("#exampleInputDriverAddress").val(address);
+            $("#txtMObileDriverNumber").val(mobileNum);
+            $("#txtDriverPassword").val(password);
+            $("#txtDriverEmail").val(email);
+        });
+    }
+
+
+</script>
+
 </body>
 </html>

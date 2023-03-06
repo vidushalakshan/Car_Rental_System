@@ -3,18 +3,20 @@ package lk.ijse.spring.controller;
 import lk.ijse.spring.dto.Drive_SheduleDTO;
 import lk.ijse.spring.service.Driver_SheduleService;
 import lk.ijse.spring.util.ResponseUtil;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("api/driverShedule")
+@RequestMapping("api/shedule")
 @CrossOrigin
 public class DriverSheduleController {
 
     @Autowired
     Driver_SheduleService driver_sheduleService;
+
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil getAllShedule(){

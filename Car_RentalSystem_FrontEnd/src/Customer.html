@@ -96,7 +96,6 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid" id="topnaw">
                 <h1 id="txtnav">Book Now</h1>
-                <img alt="" id="navimage" src="assets/image/logout.png">
             </div>
         </nav>
     </div>
@@ -178,7 +177,7 @@
 <div class="col-md-auto">
     <div class="card col-12 mx-1">
         <div class="card-body" id="customerPayment">
-            <form class="form-group col-5 d-inline-block mx-3" id="customerforms">
+            <form class="form-group col-5 d-inline-block mx-3" id="paymentCusForm">
                 <label class="form-label" for="paymentInputID" id="PaymentIDBtn">Card Number:</label>
                 <input aria-describedby="orderId"
                        class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
@@ -273,9 +272,7 @@
        });
    }
 
-
-    /*
-    clear customer input field*/
+    /* clear customer input field*/
 
     function clearForm() {
         $("#CustomerInputID").val("");
@@ -285,6 +282,70 @@
         $("#txtPassword").val("");
         $("#txtAdminEmail").val("");
     }
+
+/*----------------------------------------------------------------------------------------------------------------------------*/
+
+ /*  start payment section*/
+
+
+   $("#paymentaddbtn").click(function () {
+       savePayment();
+   });
+
+
+   $("#paymentClearbtn").click(function () {
+       clearPayment();
+   });
+
+   loadAllPayment();
+
+   /*
+   save customer*/
+   function savePayment() {
+       var data = $("#paymentCusForm").serialize();
+       $.ajax({
+           url: baseUrl,
+           method: "POST",
+           data: data,
+           success: function (res) {
+               if (res.code == 200) {
+                   alert("Successfully Customer Registered..");
+               }
+           },
+           error: function (ob) {
+               alert("wrong");
+           }
+       });
+   }
+
+   function loadAllCustomer() {
+       $("#customerBodytbl").empty();
+       $.ajax({
+           url: baseUrl,
+           method: "GET",
+           success: function (response) {
+               for (const customers of response.data) {
+                   let row = `<tr><td>${customers.cus_ID}</td><td>${customers.name}</td><td>${customers.nic_no}</td><td>${customers.address}</td><td>${customers.mobile_num}</td><td>${customers.email}</td></tr>`;
+                   $("#customerBodytbl").append(row);
+               }
+               bindClickEventsVehical();
+           },
+           error: function (ob) {
+               alert(ob.responseJSON.message);
+           }
+       });
+   }
+
+   /* clear customer input field*/
+
+   function clearForm() {
+       $("#CustomerInputID").val("");
+       $("#CustomerInputName").val("");
+       $("#exampleInputAddress").val("");
+       $("#txtMObileNumber").val("");
+       $("#txtPassword").val("");
+       $("#txtAdminEmail").val("");
+   }
 </script>
 </body>
 </html>
