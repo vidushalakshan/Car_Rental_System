@@ -804,42 +804,42 @@ end Customer section
 
     <!--start form section-->
 
-    <form class="col-md-auto">
-        <div class="card col-12 mx-1">
-            <div class="card-body">
-                <div class="form-group col-5 d-inline-block mx-3">
-                    <select aria-label="Default select example" class="form-select">
-                        <option selected>Select Car :</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
+<!--    section<form class="col-md-auto">-->
+<!--        <div class="card col-12 mx-1">-->
+<!--            <div class="card-body">-->
+<!--                <div class="form-group col-5 d-inline-block mx-3">-->
+<!--                    <select aria-label="Default select example" class="form-select">-->
+<!--                        <option selected>Select Car :</option>-->
+<!--                        <option value="1">One</option>-->
+<!--                        <option value="2">Two</option>-->
+<!--                        <option value="3">Three</option>-->
+<!--                    </select>-->
+<!--                </div>-->
 
-                <div class="form-group col-5 d-inline-block m-lg-2">
-                    <select aria-label="Default select example" class="form-select">
-                        <option selected>Select Driver :</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
+<!--                <div class="form-group col-5 d-inline-block m-lg-2">-->
+<!--                    <select aria-label="Default select example" class="form-select">-->
+<!--                        <option selected>Select Driver :</option>-->
+<!--                        <option value="1">One</option>-->
+<!--                        <option value="2">Two</option>-->
+<!--                        <option value="3">Three</option>-->
+<!--                    </select>-->
+<!--                </div>-->
 
-            </div>
-        </div>
-        </div>
-    </form>
+<!--            </div>-->
+<!--        </div>-->
+<!--        </div>-->
+<!--    </form>-->
 
-    <!-- end form section-->
+<!--    &lt;!&ndash; end form section&ndash;&gt;-->
 
-    <br><br>
+<!--    <br><br>-->
 
-    <!-- start booking button section-->
+<!--    &lt;!&ndash; start booking button section&ndash;&gt;-->
 
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="bookingbtn">
-        <button class="btn btn-outline-danger" id="btnCancelBooking" type="button">Cancel Booking</button>
-        <button class="btn btn-outline-info" id="btnConfoirmBooking" type="button">Conform Booking</button>
-    </div>
+<!--    <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="bookingbtn">-->
+<!--        <button class="btn btn-outline-danger" id="btnCancelBooking" type="button">Cancel Booking</button>-->
+<!--        <button class="btn btn-outline-info" id="btnConfoirmBooking" type="button">Conform Booking</button>-->
+<!--    </div>-->
     <br><br>
     <!-- end booking button section-->
 
@@ -851,21 +851,15 @@ end Customer section
             <tr>
                 <th scope="col">Booking_ID</th>
                 <th scope="col">Customer_ID</th>
-                <th scope="col">Car_ID</th>
-                <th scope="col">Driver_ID</th>
-                <th scope="col">Pick_Up_Date</th>
-                <th scope="col">Pick_up_Time</th>
-                <th scope="col">Drop_Of_Date</th>
-                <th scope="col">Drop_Off_Time</th>
-                <th scope="col">Rent_Price</th>
+                <th scope="col">Pick-up-Date</th>
+                <th scope="col">Drop-off-Date</th>
+                <th scope="col">Pick-up-Time</th>
+                <th scope="col">Drop-off-Time</th>
                 <th scope="col">Action</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody id="bookingBodyTbl">
             <tr>
-                <th>1</th>
-                <td>Mark</td>
-                <td>Otto</td>
                 <td>@mdo</td>
                 <td>@mdo</td>
                 <td>@mdo</td>
@@ -1581,8 +1575,52 @@ end Customer section
     }
 /*------------------------------------------------------------------*/
 
+/*Customer content*/
 
+    const baseUrl = "http://localhost:8080/Car_Rental_System_war/api/customer";
 
+    loadAllCustomer();
+
+    function loadAllCustomer() {
+        $("#customerBodytbl").empty();
+        $.ajax({
+            url: baseUrl,
+            method: "GET",
+            success: function (response) {
+                for (const customers of response.data) {
+                    let row = `<tr><td>${customers.cus_ID}</td><td>${customers.name}</td><td>${customers.nic_no}</td><td>${customers.address}</td><td>${customers.mobile_num}</td><td>${customers.email}</td></tr>`;
+                    $("#customerBodytbl").append(row);
+                }
+                bindClickEventsVehical();
+            },
+            error: function (ob) {
+                alert(ob.responseJSON.message);
+            }
+        });
+    }
+
+    // ---booking content----
+
+    const baseUrls = "http://localhost:8080/Car_Rental_System_war/api/booking"
+
+    loadAllBooking();
+
+    function loadAllBooking() {
+        $("#bookingBodyTbl").empty();
+        $.ajax({
+            url: baseUrls,
+            method: "GET",
+            success: function (response) {
+                for (const booking of response.data) {
+                    let row = `<tr><td>${booking.pickUp}</td><td>${booking.dropOff}</td><td>${booking.pickUpDate}</td><td>${booking.dropOffDate}</td><td>${booking.pickUpTime}</td><td>${booking.dropOffTime}</td></tr>`;
+                    $("#bookingBodyTbl").append(row);
+                }
+            },
+            error: function (ob) {
+                alert(ob.responseJSON.message);
+            }
+        });
+    }
 
 </script>
 </body>
