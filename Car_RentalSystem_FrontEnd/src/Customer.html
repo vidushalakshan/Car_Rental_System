@@ -845,19 +845,19 @@
 
     <i id="iPickUpDate" class="fa-solid fa-calendar-week"></i>
     <p id="pPickUpDate">Pick-up-Date</p>
-    <input id="inputPickUpDate" type="date" name="pickUpDate" placeholder="  18 August">
+    <input id="inputPickUpDate" type="text" name="pickUpDate" placeholder="  18 August">
 
     <i id="iDropOffDate" class="fa-solid fa-calendar-week"></i>
     <p id="pDropOffDate">Drop-off-Date</p>
-    <input id="inputDropOffDate" type="date" name="dropOffDate" placeholder="  24 september">
+    <input id="inputDropOffDate" type="text" name="dropOffDate" placeholder="  24 september">
 
     <i id="iPickUpTime" class="fa-solid fa-clock"></i>
     <p id="pPickUpTime">Pick-up-Time</p>
-    <input id="inputPickUpTime" type="time" name="pickUpTime" placeholder="  10:00">
+    <input id="inputPickUpTime" type="text" name="pickUpTime" placeholder="  10:00">
 
     <i id="iDropOffTime" class="fa-solid fa-clock"></i>
     <p id="pDropOffTime">Drop-off-Time</p>
-    <input id="inputDropOffTime" type="time" name="dropOffTime" placeholder="  12:00">
+    <input id="inputDropOffTime" type="text" name="dropOffTime" placeholder="  12:00">
 </section>
 
 <h1 id="paymentCustomer">Payment Details</h1>
@@ -916,10 +916,16 @@
         <input id="inputCVC" type="text" placeholder="    ...">
 
         <svg id="svgHolderName" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M224 256c70.7 0 128-57.31 128-128s-57.3-128-128-128C153.3 0 96 57.31 96 128S153.3 256 224 256zM274.7 304H173.3C77.61 304 0 381.6 0 477.3c0 19.14 15.52 34.67 34.66 34.67h378.7C432.5 512 448 496.5 448 477.3C448 381.6 370.4 304 274.7 304z"/></svg>
-        <label id="lblHolderName">Cardholder name</label>
-        <input id="inputHolderName" type="text" placeholder="    Enter full name">
+        <label id="lblHolderName">Rent Price</label>
+        <input id="inputHolderName" type="text" placeholder="    Enter Rent Price">
 
         <button id="btnAddCard">Add card</button>
+    </div>
+
+    <br><br>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="paymentbtnbtn">
+        <button class="btn btn-outline-danger" id="btnaddPayment" type="button">Add</button>
+        <button class="btn btn-outline-info" id="btnclearPayment" type="button">Clear</button>
     </div>
 
 <!--    &lt;!&ndash;bank slip method&ndash;&gt;-->
@@ -989,14 +995,18 @@
 
     const baseUrl = "http://localhost:8080/Car_Rental_System_war/api/customer";
 
-   const baseUrlBooking = "http://localhost:8080/Car_Rental_System_war/api/booking"
+   const baseUrlBooking = "http://localhost:8080/Car_Rental_System_war/api/booking";
+
+   const baseUrlPayment = "http://localhost:8080/Car_Rental_System_war/api/payment";
+
+
 
    $("#btnaddCustomer").click(function () {
-       saveBookingDetails();
+        saveCustomer();
    });
 
    $("#btnclearCustomer").click(function () {
-       clearForm();
+       savePayment();
    });
 
    loadAllCustomer();
@@ -1054,23 +1064,23 @@
  /*  start payment section*/
 
 
-   $("#paymentaddbtn").click(function () {
-       savePayment();
-   });
-
-
-   $("#paymentClearbtn").click(function () {
-       clearPayment();
-   });
 
    loadAllPayment();
 
    /*
    save customer*/
+   $("#btnaddPayment").click(function () {
+        savePayment();
+   });
+
+
+
+
+
    function savePayment() {
-       var data = $("#paymentCusForm").serialize();
+       var data = $("#paymentMethod_container").serialize();
        $.ajax({
-           url: baseUrl,
+           url: baseUrlPayment,
            method: "POST",
            data: data,
            success: function (res) {
@@ -1115,6 +1125,7 @@
 
    // ----Starting booking content----
 
+
     function saveBookingDetails() {
         var data = $("#form_container").serialize();
         $.ajax({
@@ -1134,6 +1145,7 @@
    /* $("#btnAddCard").click(function () {
         saveBookingDetails();
     });*/
+
 
 </script>
 </body>
