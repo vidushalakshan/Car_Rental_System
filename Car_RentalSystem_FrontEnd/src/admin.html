@@ -1605,9 +1605,8 @@ end Customer section
             success: function (response) {
                 for (const customers of response.data) {
                     let row = `<tr><td>${customers.item_ID}</td><td>${customers.nameCustomer}</td><td>${customers.email}</td><td>${customers.emailEx}</td><td>${customers.emailcv}</td><td>${customers.emailRe}</td></tr>`;
-                    $("#customerBodytbl").append(row);
+                    $("#tblPayment").append(row);
                 }
-                bindClickEventsVehical();
             },
             error: function (ob) {
                 alert(ob.responseJSON.message);

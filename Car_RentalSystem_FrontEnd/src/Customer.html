@@ -831,8 +831,84 @@
 <br>
 <br>
 
+
+<div class="col-md-auto">
+    <div class="card col-12 mx-1">
+        <form class="card-body" id="bookingForm">
+            <div class="form-group col-5 d-inline-block mx-3">
+                <label class="form-label" for="CustomerInputID" id="bookingID">Booking_ID :</label>
+                <input aria-describedby="orderId"
+                       class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                       id="inputBookingID" name="booking_ID" type="text">
+            </div>
+
+            <div class="form-group col-5 d-inline-block m-lg-2">
+                <label class="form-label" for="CustomerInputName" id="customerID">Customer_ID :</label>
+                <input aria-describedby="orderDate"
+                       class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                       id="inputCustomerID" name="cus_ID" type="text">
+            </div>
+
+            <div class="form-group col-5 d-inline-block m-lg-2">
+                <label class="form-label" for="CustomerInputName" id="carID">Car_ID :</label>
+                <input aria-describedby="orderDate"
+                       class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                       id="inputCarID" name="car_ID" type="text">
+            </div>
+
+            <div class="mx-3 mt-2 col-5 d-inline-block">
+                <label class="form-label" for="exampleInputAddress" id="pickUpDates">Pick-up-Date :</label>
+                <input aria-describedby="orderDate"
+                       class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                       id="inputPickUpDates" name="nic_no" type="date">
+            </div>
+
+            <!--<div class="mx-3 mt-2 col-5 d-inline-block">
+                <label class="form-label" for="exampleInputAddress" id="CustomerNicNoBtn">Nic_No :</label>
+                <select class="form-select btn-outline-primary bg-light bg-opacity-50 text-dark"
+                        id="exampleInputAddress" type="">
+                </select>
+            </div>-->
+
+            <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
+                <label class="form-label" for="txtMObileNumber" id="dropOffDate">Drop-off-Date :</label>
+                <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                       id="inputDropOffDates" name="dropOff"
+                       type="date">
+            </div>
+
+            <div class="form-group col-5 d-inline-block mx-3">
+                <label class="form-label" for="txtPassword" id="pickuptimes">Pick-up-Time :</label>
+                <input aria-describedby="orderId"
+                       class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                       id="inputPickUpTimes" name="mobile_num" type="time">
+            </div>
+
+            <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
+                <label class="form-label" for="txtAdminEmail" id="dropOff">Drop-off-Time :</label>
+                <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="inputDropOffTimes"
+                       name="dropOff"  type="time">
+            </div>
+
+            <!--<div class="form-group col-11 d-inline-block mx-lg-3 m-lg-1">
+                <label class="form-label" for="formFile" id="CustomerImageImg">Customer Image :</label>
+                <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="formFile"
+                       type="file">
+            </div>-->
+        </form>
+    </div>
+</div>
+<br><br>
+<!--<div class="d-grid gap-2 d-md-flex justify-content-md-end" id="customerbtn">
+    <button class="btn btn-outline-danger" id="btnaddCustomer" type="button">Add</button>
+    <button class="btn btn-outline-info" id="btnclearCustomer" type="button">Clear</button>
+</div>-->
+<br>
+<br>
 <!--
 <h1 id="booking">Booking</h1>
+
+
 
 &lt;!&ndash;
 <section id="form_container">
@@ -1114,8 +1190,7 @@
    const baseUrlItem = "http://localhost:8080/Car_Rental_System_war/api/item";
 
    $("#btnaddCustomer").click(function () {
-     saveItem();
-     saveCustomer();
+     saveBookingDetails();
    });
 
    $("#btnclearCustomer").click(function () {

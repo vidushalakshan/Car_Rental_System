@@ -13,6 +13,7 @@ import lombok.ToString;
 public class BookingDTO {
     private String bookingID;
     private String cus_id;
+    private String car_id;
     private String pick_Up_Date;
     private String drop_of_Date;
     private String pick_up_Time;

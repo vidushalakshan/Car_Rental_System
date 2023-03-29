@@ -17,10 +17,21 @@ public class ItemController {
     @Autowired
     ItemService itemService;
 
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllItems(){
+        return  new ResponseUtil(200, "OK",itemService.getAllItems());
+    }
+
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil addItem(@ModelAttribute ItemDTO itemDTO) {
          itemService.saveItem(itemDTO);
-        return new ResponseUtil(200, "item added Successfully", null);
+        return new ResponseUtil(200, "Payment added Successfully", null);
+    }
+
+    @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil deleteAdmin(@RequestParam String id) {
+        itemService.deleteItem(id);
+        return new ResponseUtil(200, "Payment Delete Successfully", null);
     }
 }
