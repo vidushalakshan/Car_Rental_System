@@ -1,9 +1,7 @@
 package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.BookingDTO;
-import lk.ijse.spring.dto.CustomerDTO;
 import lk.ijse.spring.entity.Booking;
-import lk.ijse.spring.entity.Customer;
 import lk.ijse.spring.repo.BookinRepo;
 import lk.ijse.spring.service.BookingService;
 import org.modelmapper.ModelMapper;

@@ -12,8 +12,7 @@ import javax.persistence.Id;
 @Data
 @Entity
 public class Vehical {
-    @Id
-    private String re_Num;
+    @Id     private String re_Num;
     private String car_Availability;
     private String car_Brand;
     private String car_Type;

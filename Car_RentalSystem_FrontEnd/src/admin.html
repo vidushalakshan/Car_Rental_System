@@ -860,12 +860,12 @@ end Customer section
             </thead>
             <tbody id="bookingBodyTbl">
             <tr>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>
                     <button class="btn btn-danger badge rounded-pill" style="width: 80px;" type="button">Delete</button>
                 </td>
@@ -884,7 +884,7 @@ end Customer section
 
     <!--start form section-->
 
-    <form class="col-md-auto">
+   <!-- <form class="col-md-auto">
         <div class="card col-12 mx-1">
             <div class="card-body">
                 <div class="form-group col-5 d-inline-block mx-3">
@@ -928,16 +928,16 @@ end Customer section
         </div>
     </form>
 
-    <!-- end form section-->
+    &lt;!&ndash; end form section&ndash;&gt;
 
     <br><br>
 
-    <!-- start booking button section-->
+    &lt;!&ndash; start booking button section&ndash;&gt;
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="paymentbtn">
         <button class="btn btn-outline-danger" id="btnAddpayment" type="button">Add Payment</button>
         <button class="btn btn-outline-info" id="btnUpdatedPayment" type="button">Update Payment</button>
-    </div>
+    </div>-->
     <br><br>
     <!-- end booking button section-->
     <!--start Booking table section-->
@@ -946,30 +946,22 @@ end Customer section
             <thead>
             <tr>
                 <th scope="col">Payment_ID</th>
-                <th scope="col">Drof_Off_Date</th>
-                <th scope="col">Drof_Off_Last_Day</th>
-                <th scope="col">Car_ID</th>
-                <th scope="col">Customer_ID</th>
-                <th scope="col">Driver_ID</th>
-                <th scope="col">Rent_Price</th>
-                <th scope="col">Damaging_Price</th>
-                <th scope="col">Discount</th>
-                <th scope="col">Total_Price</th>
+                <th scope="col">CustomerID</th>
+                <th scope="col">CardNumber</th>
+                <th scope="col">ExpiryDate</th>
+                <th scope="col">CVV</th>
+                <th scope="col">RentPrice</th>
                 <th scope="col">Action</th>
             </tr>
             </thead>
-            <tbody>
+            <tbody id="tblPayment">
             <tr>
-                <th>1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
-                <td>@mdo</td>
+                <th></th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td>
                     <button class="btn btn-danger badge rounded-pill" style="width: 80px;" type="button">Delete</button>
                 </td>
@@ -1599,6 +1591,29 @@ end Customer section
         });
     }
 
+    /*payment content*/
+
+    const baseUrlP = "http://localhost:8080/Car_Rental_System_war/api/item";
+
+    loadAllPayment();
+
+    function loadAllPayment() {
+        $("#tblPayment").empty();
+        $.ajax({
+            url: baseUrlP,
+            method: "GET",
+            success: function (response) {
+                for (const customers of response.data) {
+                    let row = `<tr><td>${customers.item_ID}</td><td>${customers.nameCustomer}</td><td>${customers.email}</td><td>${customers.emailEx}</td><td>${customers.emailcv}</td><td>${customers.emailRe}</td></tr>`;
+                    $("#customerBodytbl").append(row);
+                }
+                bindClickEventsVehical();
+            },
+            error: function (ob) {
+                alert(ob.responseJSON.message);
+            }
+        });
+    }
     // ---booking content----
 
     const baseUrls = "http://localhost:8080/Car_Rental_System_war/api/booking"
