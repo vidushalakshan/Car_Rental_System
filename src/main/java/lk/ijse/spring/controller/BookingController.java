@@ -28,7 +28,7 @@ public class BookingController {
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil addBooking (@ModelAttribute BookingDTO bookingDTO) {
         bookingService.saveBooking(bookingDTO);
-        return new ResponseUtil(200,"Booking aded Successfully",null);
+        return new ResponseUtil(200,"Booking added Successfully",null);
     }
 
     @PutMapping(produces = MediaType.APPLICATION_JSON_VALUE)

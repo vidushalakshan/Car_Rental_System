@@ -745,6 +745,227 @@
         }
 
 
+        /*-------------------- nic img form container ---------------------*/
+        #nicForm_container{
+            position: relative;
+            top: 18px;
+            left: 582px;
+            width: 190px;
+            height: 273px;
+            background-color: #FFFFFF;
+            border-radius: 30px 30px 30px 30px;
+        }
+
+        #nicForm_container .wrapper{
+            position: relative;
+            width: 100%;
+            height: 219px;
+            border-radius: 30px;
+            /*border: 2px solid red;*/
+            background: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .wrapper.active{
+            border: none;
+        }
+
+        .wrapper .image{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wrapper .image #imgNic {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .wrapper .icon{
+            font-size: 50px;
+            color: gray;
+            opacity: 10%;
+            text-align: center;
+        }
+
+        .wrapper .text{
+            font-size: 14px;
+            color: black;
+            opacity: 10%;
+            font-family: 'Jost', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+        }
+
+        .wrapper #cancel-btn{
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            font-size: 15px;
+            cursor: pointer;
+            color: #4375F8;
+            display: none;
+        }
+
+        .wrapper.active:hover #cancel-btn{
+            display: block;
+        }
+
+        .wrapper #cancel-btn:hover{
+            color: #ff253a;
+        }
+
+        .wrapper .file-name{
+            position: absolute;
+            font-family: 'Jost', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            bottom: 0;
+            width: 100%;
+            color: black;
+            padding: 8px 0;
+            font-size: 13px;
+            background: #FFFFFF;
+            text-align: center;
+            display: none;
+            opacity: 68%;
+        }
+
+        .wrapper.active:hover .file-name{
+            display: block;
+        }
+
+        #nicForm_container #custom-btn{
+            font-size: 12px;
+            padding: 9px 5px;
+            transition: all 1s ease;
+            font-family: 'Jost', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            width: 190px;
+            height: 35px;
+            border-radius: 10px 10px 10px 10px;
+            border: 1px solid #4375F8;
+            z-index: 4;
+            position: absolute;
+            top: 232px;
+            right: 1px;
+            display: block;
+            color: #FFFFFF;
+            cursor: pointer;
+            background: #4375F8;
+            outline: none;
+        }
+
+        /*new add*/
+        #imgNic::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f5f5f5;
+        }
+
+
+        #lblPayment{
+            position: absolute;
+            left: 345px;
+            top: 315px;
+            color: #4375F8;
+            cursor: pointer;
+            font-size: 12px;
+            font-family: 'Jost', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /*    #cancelBox{
+                position: relative;
+                width: 24px;
+                height: 24px;
+                border-radius: 100%;
+                bottom: 370px;
+                left: 810px;
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+            }*/
+
+        #iHide{
+            position: absolute;
+            top: 16px;
+            left: 816px;
+            opacity: 40%;
+            cursor: pointer;
+            color: black;
+            font-size: 16px;
+        }
+
+        #iHide:hover{
+            color: #ff253a;
+            opacity: 90%;
+        }
+
+        #btnUpdateUser{
+            position: absolute;
+            top: 18px;
+            left: 786px;
+            opacity: 60%;
+            cursor: pointer;
+            color: black;
+            font-size: 12px;
+        }
+
+        #btnUpdateUser:hover{
+            color: #4375F8;
+            opacity: 90%;
+        }
+
+        #userTable{
+            position: absolute;
+            top: 18px;
+            left: 754px;
+            opacity: 60%;
+            cursor: pointer;
+            color: black;
+            font-size: 12px;
+        }
+
+        #userTable:hover{
+            color: #4375F8;
+            opacity: 90%;
+        }
+
+        #bookingDetailsTable{
+            position: absolute;
+            top: 18px;
+            left: 724px;
+            opacity: 60%;
+            cursor: pointer;
+            color: black;
+            font-size: 12px;
+        }
+
+        #bookingDetailsTable:hover{
+            color: #4375F8;
+            opacity: 90%;
+        }
+
+
     </style>
 </head>
 <body>
@@ -814,12 +1035,29 @@
                 <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="txtAdminEmail"
                      name="email"  type="text">
             </div>
-
             <!--<div class="form-group col-11 d-inline-block mx-lg-3 m-lg-1">
                 <label class="form-label" for="formFile" id="CustomerImageImg">Customer Image :</label>
                 <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="formFile"
                        type="file">
             </div>-->
+            <section id="nicForm_container">
+                <div class="wrapper">
+                    <div class="image">
+                        <img id="imgNic" src="" alt="">
+                    </div>
+
+                    <div class="content">
+                        <div class="icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                        <div class="text">No file chosen, yet!</div>
+                    </div>
+
+                    <div id="cancel-btn"><i class="fa-solid fa-xmark"></i></div>
+                    <div class="file-name">File name here</i></div>
+                </div>
+
+                <input id="default-btn" type="file" hidden>
+                <button onclick="defaultBtnActive()" id="custom-btn" type="button">Choose your nic or license</button>
+            </section>
         </form>
     </div>
 </div>
@@ -1128,6 +1366,42 @@
 
 <div class="col-md-auto">
     <div class="card col-12 mx-1">
+        <form class="card-body" id="payForm">
+            <div class="form-group col-5 d-inline-block mx-3">
+                <label class="form-label" for="CustomerInputID" id="paymentID">Payment_ID :</label>
+                <input aria-describedby="orderId"
+                       class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                       id="inputPaymentID" name="cus_ID" type="text">
+            </div>
+
+            <div class="form-group col-5 d-inline-block m-lg-2">
+                <label class="form-label" for="CustomerInputName" id="booking_Id">Booking_Id :</label>
+                <input aria-describedby="orderDate"
+                       class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                       id="inputBooking_Id" name="name" type="text">
+            </div>
+
+            <div class="mx-3 mt-2 col-5 d-inline-block">
+                <label class="form-label" for="exampleInputAddress" id="cardNumber">CardNumber :</label>
+                <input aria-describedby="orderDate"
+                       class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                       id="inputCard_Number" name="nic_no" type="text">
+            </div>
+
+            <!--<div class="form-group col-11 d-inline-block mx-lg-3 m-lg-1">
+                <label class="form-label" for="formFile" id="CustomerImageImg">Customer Image :</label>
+                <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="formFile"
+                       type="file">
+            </div>-->
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="customerbtn">
+                <button class="btn btn-outline-danger" id="btnaddCustomer" type="button">Add</button>
+                <button class="btn btn-outline-info" id="btnclearCustomer" type="button">Clear</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!--<div class="col-md-auto">
+    <div class="card col-12 mx-1">
         <form class="card-body" id="itemForm">
             <div class="form-group col-5 d-inline-block mx-3">
                 <label class="form-label" for="CustomerInputID" id="itemIDBtn">PaymentID :</label>
@@ -1148,37 +1422,48 @@
                 <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="itemEmail"
                        name="email"  type="text">
             </div>
-
-            <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
-                <label class="form-label" for="txtAdminEmail" id="itemPrice">ExpiryDate :</label>
-                <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="itemEmai"
-                       name="emailEx"  type="date">
-            </div>
-
-            <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
-                <label class="form-label" for="txtAdminEmail" id="itemNumbers">CVV :</label>
-                <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="itemEmailss"
-                       name="emailcv"  type="text">
-            </div>
-
-            <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
-                <label class="form-label" for="txtAdminEmail" id="itemname">RentPrice :</label>
-                <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="itemn"
-                       name="emailRe"  type="text">
-            </div>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end" id="customerbtn">
-                <button class="btn btn-outline-danger" id="btnaddCustomer" type="button">Add</button>
-                <button class="btn btn-outline-info" id="btnclearCustomer" type="button">Clear</button>
-            </div>
         </form>
     </div>
 </div>
-<br><br>
+<br><br>-->
 
 
 
 <script src="assets/jQuery/jquery-3.6.0.min.js"></script>
 <script>
+    const wrapper = document.querySelector(".wrapper");
+    const fileName = document.querySelector(".file-name");
+    const cancelBtn = document.querySelector("#cancel-btn");
+    const defaultBtn = document.querySelector("#default-btn");
+    const customBtn = document.querySelector("#custom-btn");
+    const img =  document.querySelector("#imgNic");
+    let regExp = /[0-9a-zA-Z\^\&\'@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+
+
+    function defaultBtnActive() {
+        defaultBtn.click();
+    }
+    defaultBtn.addEventListener("change", function () {
+        const file = this.files[0];
+        if (file){
+            const reader = new FileReader();
+            reader.onload = function () {
+                const result = reader.result;
+                img.src = result;
+                wrapper.classList.add("active");
+            }
+            cancelBtn.addEventListener("click", function () {
+                img.src = "";
+                wrapper.classList.remove("active");
+            })
+            reader.readAsDataURL(file);
+        }
+        if (this.value){
+            let valueStore = this.value.match(regExp);
+            fileName.textContent = valueStore;
+        }
+    })
+
    /* $("#CustomerIDBtn").prop('disabled', true);*/
 
     const baseUrl = "http://localhost:8080/Car_Rental_System_war/api/customer";
@@ -1189,8 +1474,9 @@
 
    const baseUrlItem = "http://localhost:8080/Car_Rental_System_war/api/item";
 
+   const baseUrlP = "http://localhost:8080/Car_Rental_System_war/api/pay";
    $("#btnaddCustomer").click(function () {
-     saveBookingDetails();
+     savePay();
    });
 
    $("#btnclearCustomer").click(function () {
@@ -1202,9 +1488,9 @@
     /*
     save customer*/
     function savePayment() {
-        var data = $("#paymentForm").serialize();
+        var data = $("#itemForm").serialize();
         $.ajax({
-            url: baseUrlPayment,
+            url: baseUrlP,
             method: "POST",
             data: data,
             success: function (res) {
@@ -1250,10 +1536,27 @@
 
            },
            error: function (ob) {
-               alert("Wrong..")
+               alert("Wrong..");
            }
        })
 
+   }
+
+   function savePay() {
+        var data = $("#payForm").serialize();
+        $.ajax({
+            url: baseUrlP,
+            method: "POST",
+            data: data,
+            success: function (res) {
+                if (res.code == 200){
+                    alert("Successfully Payment Registered...");
+                }
+            },
+            error: function (ob) {
+                alert("Wrong...");
+            }
+        })
    }
 
 
@@ -1373,7 +1676,7 @@
         saveBookingDetails();
     });*/
 
-
+/*IFS*/
 </script>
 </body>
 </html>
