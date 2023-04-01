@@ -303,6 +303,446 @@
             right: 6%;
         }
 
+        /*-------------------- nic img form container ---------------------*/
+        #nicForm_container{
+            position: relative;
+            top: 18px;
+            left: 364px;
+            width: 190px;
+            height: 273px;
+            background-color: #FFFFFF;
+            border-radius: 30px 30px 30px 30px;
+        }
+
+        #nicForm_container .wrapper{
+            position: relative;
+            width: 100%;
+            height: 219px;
+            border-radius: 30px;
+            /*border: 2px solid red;*/
+            background: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .wrapper.active{
+            border: none;
+        }
+
+        .wrapper .image{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wrapper .image #imgNic {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .wrapper .icon{
+            font-size: 50px;
+            color: gray;
+            opacity: 10%;
+            text-align: center;
+        }
+
+        .wrapper .text{
+            font-size: 14px;
+            color: black;
+            opacity: 10%;
+            font-family: 'Jost', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+        }
+
+        .wrapper #cancel-btn{
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            font-size: 15px;
+            cursor: pointer;
+            color: #4375F8;
+            display: none;
+        }
+
+        .wrapper.active:hover #cancel-btn{
+            display: block;
+        }
+
+        .wrapper #cancel-btn:hover{
+            color: #ff253a;
+        }
+
+        .wrapper .file-name{
+            position: absolute;
+            font-family: 'Jost', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            bottom: 0;
+            width: 100%;
+            color: black;
+            padding: 8px 0;
+            font-size: 13px;
+            background: #FFFFFF;
+            text-align: center;
+            display: none;
+            opacity: 68%;
+        }
+
+        .wrapper.active:hover .file-name{
+            display: block;
+        }
+
+        #nicForm_container #custom-btn{
+            font-size: 12px;
+            padding: 9px 5px;
+            transition: all 1s ease;
+            font-family: 'Jost', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            width: 190px;
+            height: 35px;
+            border-radius: 10px 10px 10px 10px;
+            border: 1px solid #4375F8;
+            z-index: 4;
+            position: absolute;
+            top: 232px;
+            right: 1px;
+            display: block;
+            color: #FFFFFF;
+            cursor: pointer;
+            background: #4375F8;
+            outline: none;
+        }
+
+        /*new add*/
+        #imgNic::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f5f5f5;
+        }
+
+
+        #lblPayment{
+            position: absolute;
+            left: 345px;
+            top: 315px;
+            color: #4375F8;
+            cursor: pointer;
+            font-size: 12px;
+            font-family: 'Jost', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /*    #cancelBox{
+                position: relative;
+                width: 24px;
+                height: 24px;
+                border-radius: 100%;
+                bottom: 370px;
+                left: 810px;
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+            }*/
+
+        #iHide{
+            position: absolute;
+            top: 16px;
+            left: 816px;
+            opacity: 40%;
+            cursor: pointer;
+            color: black;
+            font-size: 16px;
+        }
+
+        #iHide:hover{
+            color: #ff253a;
+            opacity: 90%;
+        }
+
+        #btnUpdateUser{
+            position: absolute;
+            top: 18px;
+            left: 786px;
+            opacity: 60%;
+            cursor: pointer;
+            color: black;
+            font-size: 12px;
+        }
+
+        #btnUpdateUser:hover{
+            color: #4375F8;
+            opacity: 90%;
+        }
+
+        #userTable{
+            position: absolute;
+            top: 18px;
+            left: 754px;
+            opacity: 60%;
+            cursor: pointer;
+            color: black;
+            font-size: 12px;
+        }
+
+        #userTable:hover{
+            color: #4375F8;
+            opacity: 90%;
+        }
+
+        #bookingDetailsTable{
+            position: absolute;
+            top: 18px;
+            left: 724px;
+            opacity: 60%;
+            cursor: pointer;
+            color: black;
+            font-size: 12px;
+        }
+
+        #bookingDetailsTable:hover{
+            color: #4375F8;
+            opacity: 90%;
+        }
+
+        /*-------------------- nic img form container ---------------------*/
+        #nicForm_containe{
+            position: relative;
+            top: 18px;
+            left: 364px;
+            width: 190px;
+            height: 273px;
+            background-color: #FFFFFF;
+            border-radius: 30px 30px 30px 30px;
+        }
+
+        #nicForm_containe .wrapper{
+            position: relative;
+            width: 100%;
+            height: 219px;
+            border-radius: 30px;
+            /*border: 2px solid red;*/
+            background: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .wrapper.active{
+            border: none;
+        }
+
+        .wrapper .image{
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .wrapper .image #imgNic {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .wrapper .icon{
+            font-size: 50px;
+            color: gray;
+            opacity: 10%;
+            text-align: center;
+        }
+
+        .wrapper .text{
+            font-size: 14px;
+            color: black;
+            opacity: 10%;
+            font-family: 'Jost', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            font-weight: bold;
+        }
+
+        .wrapper #cancel-bt{
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            font-size: 15px;
+            cursor: pointer;
+            color: #4375F8;
+            display: none;
+        }
+
+        .wrapper.active:hover #cancel-bt{
+            display: block;
+        }
+
+        .wrapper #cancel-bt:hover{
+            color: #ff253a;
+        }
+
+        .wrapper .file-name{
+            position: absolute;
+            font-family: 'Jost', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            bottom: 0;
+            width: 100%;
+            color: black;
+            padding: 8px 0;
+            font-size: 13px;
+            background: #FFFFFF;
+            text-align: center;
+            display: none;
+            opacity: 68%;
+        }
+
+        .wrapper.active:hover .file-name{
+            display: block;
+        }
+
+        #nicForm_containe #custom-bt{
+            font-size: 12px;
+            padding: 9px 5px;
+            transition: all 1s ease;
+            font-family: 'Jost', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            font-family: 'Roboto', sans-serif;
+            width: 190px;
+            height: 35px;
+            border-radius: 10px 10px 10px 10px;
+            border: 1px solid #4375F8;
+            z-index: 4;
+            position: absolute;
+            top: 232px;
+            right: 1px;
+            display: block;
+            color: #FFFFFF;
+            cursor: pointer;
+            background: #4375F8;
+            outline: none;
+        }
+
+        /*new add*/
+        #imgNi::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f5f5f5;
+        }
+
+
+        #lblPayment{
+            position: absolute;
+            left: 345px;
+            top: 315px;
+            color: #4375F8;
+            cursor: pointer;
+            font-size: 12px;
+            font-family: 'Jost', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        /*    #cancelBox{
+                position: relative;
+                width: 24px;
+                height: 24px;
+                border-radius: 100%;
+                bottom: 370px;
+                left: 810px;
+                box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+                cursor: pointer;
+            }*/
+
+        #iHide{
+            position: absolute;
+            top: 16px;
+            left: 816px;
+            opacity: 40%;
+            cursor: pointer;
+            color: black;
+            font-size: 16px;
+        }
+
+        #iHide:hover{
+            color: #ff253a;
+            opacity: 90%;
+        }
+
+        #btnUpdateUser{
+            position: absolute;
+            top: 18px;
+            left: 786px;
+            opacity: 60%;
+            cursor: pointer;
+            color: black;
+            font-size: 12px;
+        }
+
+        #btnUpdateUser:hover{
+            color: #4375F8;
+            opacity: 90%;
+        }
+
+        #userTable{
+            position: absolute;
+            top: 18px;
+            left: 754px;
+            opacity: 60%;
+            cursor: pointer;
+            color: black;
+            font-size: 12px;
+        }
+
+        #userTable:hover{
+            color: #4375F8;
+            opacity: 90%;
+        }
+
+        #bookingDetailsTable{
+            position: absolute;
+            top: 18px;
+            left: 724px;
+            opacity: 60%;
+            cursor: pointer;
+            color: black;
+            font-size: 12px;
+        }
+
+        #bookingDetailsTable:hover{
+            color: #4375F8;
+            opacity: 90%;
+        }
+
     </style>
 </head>
 <body>
@@ -469,6 +909,25 @@
                     <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="formFile"
                            type="file">
                 </div>-->
+
+                <section id="nicForm_container">
+                    <div class="wrapper">
+                        <div class="image">
+                            <img id="imgNic" src="" alt="">
+                        </div>
+
+                        <div class="content">
+                            <div class="icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                            <div class="text">No file chosen, yet!</div>
+                        </div>
+
+                        <div id="cancel-btn"><i class="fa-solid fa-xmark"></i></div>
+                        <div class="file-name">File name here</i></div>
+                    </div>
+
+                    <input id="default-btn" type="file" hidden>
+                    <button onclick="defaultBtnActive()" id="custom-btn" type="button">Choose your nic or license</button>
+                </section>
             </div>
         </div>
     </form>
@@ -571,6 +1030,25 @@
                      <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="formDriverFile"
                             type="file">
                  </div>-->
+
+                <section id="nicForm_containe">
+                    <div class="wrapper">
+                        <div class="image">
+                            <img id="imgNi" src="" alt="">
+                        </div>
+
+                        <div class="content">
+                            <div class="icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                            <div class="text">No file chosen, yet!</div>
+                        </div>
+
+                        <div id="cancel-bt"><i class="fa-solid fa-xmark"></i></div>
+                        <div class="file-name">File name here</i></div>
+                    </div>
+
+                    <input id="default-bt" type="file" hidden>
+                    <button onclick="defaultBtnActive()" id="custom-bt" type="button">Choose your nic or license</button>
+                </section>
             </div>
         </div>
     </form>
@@ -1052,6 +1530,76 @@ end Customer section
         $("#payment").css("display", "block");
     });
     /*---------------------------------------------------------------------------*/
+
+
+    const wrapper = document.querySelector(".wrapper");
+    const fileName = document.querySelector(".file-name");
+    const cancelBtn = document.querySelector("#cancel-btn");
+    const defaultBtn = document.querySelector("#default-btn");
+    const customBtn = document.querySelector("#custom-btn");
+    const img =  document.querySelector("#imgNic");
+    let regExp = /[0-9a-zA-Z\^\&\'@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+
+
+    const wrappers = document.querySelector(".wrapper");
+    const fileNames = document.querySelector(".file-name");
+    const cancelBtns = document.querySelector("#cancel-btn");
+    const defaultBtns= document.querySelector("#default-btn");
+    const customBtns = document.querySelector("#custom-btn");
+    const imgs =  document.querySelector("#imgNic");
+    let regExps= /[0-9a-zA-Z\^\&\'@\{\}\[\]\,\$\=\!\-\#\(\)\.\%\+\~\_ ]+$/;
+
+
+    function defaultBtnActive() {
+        defaultBtn.click();
+    }
+
+    function defaultBtnActive() {
+        defaultBtn.click();
+    }
+
+    defaultBtn.addEventListener("change", function () {
+        const file = this.files[0];
+        if (file){
+            const reader = new FileReader();
+            reader.onload = function () {
+                const result = reader.result;
+                img.src = result;
+                wrapper.classList.add("active");
+            }
+            cancelBtn.addEventListener("click", function () {
+                img.src = "";
+                wrapper.classList.remove("active");
+            })
+            reader.readAsDataURL(file);
+        }
+        if (this.value){
+            let valueStore = this.value.match(regExp);
+            fileName.textContent = valueStore;
+        }
+    })
+
+    defaultBtns.addEventListener("change", function () {
+        const file = this.files[0];
+        if (file){
+            const reader = new FileReader();
+            reader.onload = function () {
+                const result = reader.result;
+                imgs.src = result;
+                wrappers.classList.add("active");
+            }
+            cancelBtns.addEventListener("click", function () {
+                img.src = "";
+                wrappers.classList.remove("active");
+            })
+            reader.readAsDataURL(file);
+        }
+        if (this.value){
+            let valueStore = this.value.match(regExps);
+            fileNames.textContent = valueStore;
+        }
+    })
+
     /*admin section*/
     var baseUrlAdmin = "http://localhost:8080/Car_Rental_System_war/api/admin"
 
