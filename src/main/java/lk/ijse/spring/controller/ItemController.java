@@ -1,6 +1,5 @@
 package lk.ijse.spring.controller;
 
-import lk.ijse.spring.dto.AdminDTO;
 import lk.ijse.spring.dto.ItemDTO;
 import lk.ijse.spring.service.ItemService;
 import lk.ijse.spring.util.ResponseUtil;

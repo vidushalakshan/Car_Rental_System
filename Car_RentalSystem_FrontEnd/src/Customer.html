@@ -1035,11 +1035,11 @@
                 <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="txtAdminEmail"
                      name="email"  type="text">
             </div>
-            <!--<div class="form-group col-11 d-inline-block mx-lg-3 m-lg-1">
+            <div class="form-group col-11 d-inline-block mx-lg-3 m-lg-1">
                 <label class="form-label" for="formFile" id="CustomerImageImg">Customer Image :</label>
                 <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="formFile"
                        type="file">
-            </div>-->
+            </div>
             <section id="nicForm_container">
                 <div class="wrapper">
                     <div class="image">
@@ -1073,7 +1073,55 @@
 <div class="col-md-auto">
     <div class="card col-12 mx-1">
         <form class="card-body" id="bookingForm">
+
             <div class="form-group col-5 d-inline-block mx-3">
+                <label class="form-label" for="CustomerInputID" id="CustomerIDBtns">Booking_ID  :</label>
+                <input aria-describedby="orderId"
+                       class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                       id="CustomerInputIDs" name="cus_ID" type="text">
+            </div>
+
+            <div class="form-group col-5 d-inline-block m-lg-2">
+                <label class="form-label" for="CustomerInputName" id="CustomerNameBtns">Customer_ID :</label>
+                <input aria-describedby="orderDate"
+                       class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                       id="CustomerInputNames" name="name" type="text">
+            </div>
+
+            <div class="mx-3 mt-2 col-5 d-inline-block">
+                <label class="form-label" for="exampleInputAddress" id="CustomerNicNoBtns">Pick-up-Date :</label>
+                <input aria-describedby="orderDate"
+                       class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                       id="exampleInputAddresss" name="nic_no" type="text">
+            </div>
+
+            <!--<div class="mx-3 mt-2 col-5 d-inline-block">
+                <label class="form-label" for="exampleInputAddress" id="CustomerNicNoBtn">Nic_No :</label>
+                <select class="form-select btn-outline-primary bg-light bg-opacity-50 text-dark"
+                        id="exampleInputAddress" type="">
+                </select>
+            </div>-->
+
+            <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
+                <label class="form-label" for="txtMObileNumber" id="CustomerAddressBtns">Drop-off-Date :</label>
+                <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                       id="txtMObileNumbers" name="address"
+                       type="text">
+            </div>
+
+            <div class="form-group col-5 d-inline-block mx-3">
+                <label class="form-label" for="txtPassword" id="CustomerMobileNumBtns">Pick-up-Time :</label>
+                <input aria-describedby="orderId"
+                       class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                       id="txtPasswords" name="mobile_num" type="text">
+            </div>
+
+            <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
+                <label class="form-label" for="txtAdminEmail" id="CustomerEmailBtns">Drop-off-Time :</label>
+                <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="txtAdminEmails"
+                       name="email"  type="text">
+            </div>
+           <!-- <div class="form-group col-5 d-inline-block mx-3">
                 <label class="form-label" for="CustomerInputID" id="bookingID">Booking_ID :</label>
                 <input aria-describedby="orderId"
                        class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
@@ -1101,12 +1149,12 @@
                        id="inputPickUpDates" name="nic_no" type="date">
             </div>
 
-            <!--<div class="mx-3 mt-2 col-5 d-inline-block">
+            &lt;!&ndash;<div class="mx-3 mt-2 col-5 d-inline-block">
                 <label class="form-label" for="exampleInputAddress" id="CustomerNicNoBtn">Nic_No :</label>
                 <select class="form-select btn-outline-primary bg-light bg-opacity-50 text-dark"
                         id="exampleInputAddress" type="">
                 </select>
-            </div>-->
+            </div>&ndash;&gt;
 
             <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
                 <label class="form-label" for="txtMObileNumber" id="dropOffDate">Drop-off-Date :</label>
@@ -1128,7 +1176,7 @@
                        name="dropOff"  type="time">
             </div>
 
-            <!--<div class="form-group col-11 d-inline-block mx-lg-3 m-lg-1">
+            <div class="form-group col-11 d-inline-block mx-lg-3 m-lg-1">
                 <label class="form-label" for="formFile" id="CustomerImageImg">Customer Image :</label>
                 <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="formFile"
                        type="file">
@@ -1378,7 +1426,7 @@
                 <label class="form-label" for="CustomerInputName" id="booking_Id">Booking_Id :</label>
                 <input aria-describedby="orderDate"
                        class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                       id="inputBooking_Id" name="name" type="text">
+                       id="inputBooking_Id" name="nameCus" type="text">
             </div>
 
             <div class="mx-3 mt-2 col-5 d-inline-block">
@@ -1468,7 +1516,7 @@
 
     const baseUrl = "http://localhost:8080/Car_Rental_System_war/api/customer";
 
-   const baseUrlBooking = "http://localhost:8080/Car_Rental_System_war/api/booking";
+   const baseUrlB= "http://localhost:8080/Car_Rental_System_war/api/booking";
 
    const baseUrlPayment = "http://localhost:8080/Car_Rental_System_war/api/payment";
 
@@ -1659,7 +1707,7 @@
     function saveBookingDetails() {
         var data = $("#bookingForm").serialize();
         $.ajax({
-            url: baseUrlBooking,
+            url: baseUrlB,
             method: "POST",
             data: data,
             success: function (res) {
