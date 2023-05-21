@@ -1421,23 +1421,36 @@
                 <label class="form-label" for="CustomerInputID" id="paymentID">Payment_ID :</label>
                 <input aria-describedby="orderId"
                        class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                       id="inputPaymentID" name="cus_ID" type="text">
+                       id="inputPaymentID" name="cus_ID" type="text" placeholder="P001">
             </div>
 
             <div class="form-group col-5 d-inline-block m-lg-2">
-                <label class="form-label" for="CustomerInputName" id="booking_Id">Booking_Id :</label>
+                <label class="form-label" for="CustomerInputName" id="booking_Id">Customer_Id :</label>
                 <input aria-describedby="orderDate"
                        class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                       id="inputBooking_Id" name="nameCus" type="text">
+                       id="inputBooking_Id" name="nameCus" type="text" placeholder="C001">
             </div>
 
             <div class="mx-3 mt-2 col-5 d-inline-block">
                 <label class="form-label" for="exampleInputAddress" id="cardNumber">CardNumber :</label>
                 <input aria-describedby="orderDate"
                        class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                       id="inputCard_Number" name="nic_no" type="text">
+                       id="inputCard_Number" name="nic_no" type="text" placeholder="342353352">
             </div>
 
+            <div class="mx-3 mt-2 col-5 d-inline-block">
+                <label class="form-label" for="exampleInputAddress" id="expiryDat">ExpiryDate :</label>
+                <input aria-describedby="orderDate"
+                       class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                       id="expiryDate" name="nic_no" type="Date">
+            </div>
+
+            <div class="mx-3 mt-2 col-5 d-inline-block">
+                <label class="form-label" for="exampleInputAddress" id="cv">CVV :</label>
+                <input aria-describedby="orderDate"
+                       class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
+                       id="cvv" name="nic_no" type="text" placeholder="345">
+            </div>
             <!--<div class="form-group col-11 d-inline-block mx-lg-3 m-lg-1">
                 <label class="form-label" for="formFile" id="CustomerImageImg">Customer Image :</label>
                 <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="formFile"
