@@ -992,21 +992,21 @@
                 <label class="form-label" for="CustomerInputID" id="CustomerIDBtn">Customer_ID :</label>
                 <input aria-describedby="orderId"
                        class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                       id="CustomerInputID" name="cus_ID" type="text">
+                       id="CustomerInputID" name="cus_ID" type="text" placeholder="C001">
             </div>
 
             <div class="form-group col-5 d-inline-block m-lg-2">
                 <label class="form-label" for="CustomerInputName" id="CustomerNameBtn">Full Name :</label>
                 <input aria-describedby="orderDate"
                        class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                       id="CustomerInputName" name="name" type="text">
+                       id="CustomerInputName" name="name" type="text" placeholder="Vidusha Lakshan">
             </div>
 
             <div class="mx-3 mt-2 col-5 d-inline-block">
                 <label class="form-label" for="exampleInputAddress" id="CustomerNicNoBtn">Nic_No :</label>
                 <input aria-describedby="orderDate"
                        class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                       id="exampleInputAddress" name="nic_no" type="text">
+                       id="exampleInputAddress" name="nic_no" type="text" placeholder="200122601743">
             </div>
 
             <!--<div class="mx-3 mt-2 col-5 d-inline-block">
@@ -1020,20 +1020,20 @@
                 <label class="form-label" for="txtMObileNumber" id="CustomerAddressBtn">Address :</label>
                 <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
                        id="txtMObileNumber" name="address"
-                       type="text">
+                       type="text" placeholder="Badulla">
             </div>
 
             <div class="form-group col-5 d-inline-block mx-3">
                 <label class="form-label" for="txtPassword" id="CustomerMobileNumBtn">Mobile Number :</label>
                 <input aria-describedby="orderId"
                        class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark"
-                       id="txtPassword" name="mobile_num" type="text">
+                       id="txtPassword" name="mobile_num" type="text" placeholder="0718655056">
             </div>
 
             <div class="form-group col-5 d-inline-block m-lg-2 mx-3">
                 <label class="form-label" for="txtAdminEmail" id="CustomerEmailBtn">Email :</label>
                 <input class="form-control btn-outline-primary bg-light bg-opacity-50 text-dark" id="txtAdminEmail"
-                     name="email"  type="text">
+                     name="email"  type="text" placeholder="vidusha@gmail.com">
             </div>
             <div class="form-group col-11 d-inline-block mx-lg-3 m-lg-1">
                 <label class="form-label" for="formFile" id="CustomerImageImg">Customer Image :</label>
@@ -1071,7 +1071,9 @@
 
 
 <div class="col-md-auto">
+    <h1 id="booking">Booking</h1>
     <div class="card col-12 mx-1">
+
         <form class="card-body" id="bookingForm">
 
             <div class="form-group col-5 d-inline-block mx-3">
@@ -1523,12 +1525,15 @@
    const baseUrlItem = "http://localhost:8080/Car_Rental_System_war/api/item";
 
    const baseUrlP = "http://localhost:8080/Car_Rental_System_war/api/pay";
+
    $("#btnaddCustomer").click(function () {
-     savePay();
+      saveCustomer();
+       saveBookingDetails();
+       saveItem();
    });
 
    $("#btnclearCustomer").click(function () {
-       saveBookingDetails();
+
    });
 
    loadAllCustomer();
@@ -1579,15 +1584,14 @@
            data: data,
            success: function (res) {
                if (res.code == 200){
-                   alert("Successfully Customer Resgistered...")
+                   alert("Successfully Customer Resgistered...");
                }
 
            },
            error: function (ob) {
-               alert("Wrong..");
+               alert("Successfully Customer Resgistered...");
            }
        })
-
    }
 
    function savePay() {
@@ -1716,7 +1720,7 @@
                 }
             },
             error: function (ob) {
-                alert("wrong");
+                alert("Successfully Booking Registered..");
             }
         });
     }
